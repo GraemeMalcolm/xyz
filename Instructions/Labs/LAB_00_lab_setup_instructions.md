@@ -197,7 +197,7 @@ Perform all of the steps below from your Virtual Machine:
 5. Change directories to the root of this repo within your local file system.
 
     ```powershell
-    cd C:\labfiles\data-engineering-ilt-deployment\Instructions\Labs\00\artifacts\environment-setup\automation\
+    cd C:\labfiles\data-engineering-ilt-deployment\AllFiles\00\artifacts\environment-setup\automation\
     ```
 
 6. Execute `Connect-AzAccount` and sign in to your Microsoft user account when prompted.

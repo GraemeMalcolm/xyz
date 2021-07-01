@@ -220,35 +220,7 @@ else
 
 $download = $true;
 
-#$publicDataUrl = "https://solliancepublicdata.blob.core.windows.net/"
-
-$publicDataUrl= $null 
-$rgLocation = (Get-AzResourceGroup -Name $resourceGroupName).Location
-          
-if($rgLocation -like "eastus")
-{
-  $publicDataUrl = "https://l400eastus.blob.core.windows.net/"
-}
-elseif($rgLocation -like "northeurope")
-{
-   $publicDataUrl = "https://l400northeurope.blob.core.windows.net/"
-}
-elseif($rgLocation -like "westeurope")
-{
-  $publicDataUrl = "https://l400westeurope.blob.core.windows.net/"
-}
-elseif($rgLocation -like "southeastasia")
-{
-  $publicDataUrl = "https://l400southeastasia.blob.core.windows.net/"
-}
-elseif($rgLocation -like "westus2")
-{
-  $publicDataUrl = "https://l400westus2.blob.core.windows.net/"
-}
-else   #Check for southcentralus
-{
-  $publicDataUrl = "https://l400southcentralus.blob.core.windows.net/"
-}
+$publicDataUrl = "https://solliancepublicdata.blob.core.windows.net/"
 
 $dataLakeStorageUrl = "https://"+ $dataLakeAccountName + ".dfs.core.windows.net/"
 $dataLakeStorageBlobUrl = "https://"+ $dataLakeAccountName + ".blob.core.windows.net/"
@@ -259,37 +231,25 @@ $destinationSasKey = New-AzStorageContainerSASToken -Container "wwi-02" -Context
 
 if ($download)
 {
-        Write-Information "Copying single files from the public data account..."
-        $singleFiles = @{
-                customer_info = "wwi-02/customer-info/customerinfo.csv"
-                products = "wwi-02/data-generators/generator-product/generator-product.csv"
-                dates = "wwi-02/data-generators/generator-date.csv"
-                customer = "wwi-02/data-generators/generator-customer.csv"
-                customer_clean = "wwi-02/data-generators/generator-customer-clean.csv"
-        }
-
-        foreach ($singleFile in $singleFiles.Keys) {
-                $source = $publicDataUrl + $singleFiles[$singleFile]
-                $destination = $dataLakeStorageBlobUrl + $singleFiles[$singleFile] + $destinationSasKey
-                Write-Information "Copying file $($source) to $($destination)"
-                & $azCopyCommand copy $source $destination 
-        }
-
-        Write-Information "Copying sample sales raw data directories from the public data account..."
+        Write-Information "Copying wwi-02 directory to the data lake..."
+        $wwi02 = Resolve-Path "../../../../wwi-02"
 
         $dataDirectories = @{
-                salesmall = "wwi-02,wwi-02/sale-small/"
-                analytics = "wwi-02,wwi-02/campaign-analytics/"
-                factsale = "wwi-02,wwi-02/sale-csv/"
-                security = "wwi-02,wwi-02-reduced/security/"
-                salespoc = "wwi-02,wwi-02/sale-poc/"
+                salesmall = "wwi-02,/sale-small/"
+                analytics = "wwi-02,/campaign-analytics/"
+                security = "wwi-02,/security/"
+                salespoc = "wwi-02,/sale-poc/"
+                datagenerators = "wwi-02,/data-generators/"
+                profiles1 = "wwi-02,/online-user-profiles-01/"
+                profiles2 = "wwi-02,/online-user-profiles-02/"
+                customerinfo = "wwi-02,/customer-info/"
         }
 
         foreach ($dataDirectory in $dataDirectories.Keys) {
 
                 $vals = $dataDirectories[$dataDirectory].tostring().split(",");
 
-                $source = $publicDataUrl + $vals[1];
+                $source = $wwi02.Path + $vals[1];
 
                 $path = $vals[0];
 

@@ -6,7 +6,7 @@ This module helps learners prepare their lab environments for the modules that f
 
 ## Lab details
 
-- [Module 0 - Lab environment setup](#module-0---lab-environment-setup)
+- [Module 0 - Lab environment setup with NO pre-installed virtual machine](#module-0---lab-environment-setup-with-no-pre-installed-virtual-machine)
   - [Lab details](#lab-details)
   - [Requirements](#requirements)
   - [Exercise 1: Azure setup](#exercise-1-azure-setup)
@@ -36,87 +36,87 @@ In Azure, you must register specific resource providers on your subscription bef
 
 2. In the search bar on top of the page, type `subscriptions` and select **Subscriptions** in the results.
 
-    ![The Subscriptions option is highlighted.](media/search-subscriptions.png "Subscriptions search")
+    ![The Subscriptions option is highlighted.](images/search-subscriptions.png "Subscriptions search")
 
 3. Select the Azure subscription you will use for your lab environment.
 
-    ![The subscription is selected.](media/selected-subscription.png "Subscriptions")
+    ![The subscription is selected.](images/selected-subscription.png "Subscriptions")
 
 4. Select **Resource providers** in the left-hand menu.
 
-    ![Resource providers is selected.](media/select-resource-providers.png "Resource providers")
+    ![Resource providers is selected.](images/select-resource-providers.png "Resource providers")
 
 5. In the **filter**, type `databricks` to view the **Microsoft.Databricks** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/databricks-registered.png "Microsoft.Databricks resource provider")
+    ![The resource provider status is Registered.](images/databricks-registered.png "Microsoft.Databricks resource provider")
 
     If it is **not** registered, select the **Microsoft.Databricks** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 6. In the **filter**, type `synapse` to view the **Microsoft.Synapse** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/synapse-registered.png "Microsoft.Synapse resource provider")
+    ![The resource provider status is Registered.](images/synapse-registered.png "Microsoft.Synapse resource provider")
 
     If it is **not** registered, select the **Microsoft.Synapse** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 7. In the **filter**, type `sql` to view the **Microsoft.Sql** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/sql-registered.png "Microsoft.Sql resource provider")
+    ![The resource provider status is Registered.](images/sql-registered.png "Microsoft.Sql resource provider")
 
     If it is **not** registered, select the **Microsoft.Sql** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 8. In the **filter**, type `document` to view the **Microsoft.DocumentDB** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/documentdb-registered.png "Microsoft.DocumentDB resource provider")
+    ![The resource provider status is Registered.](images/documentdb-registered.png "Microsoft.DocumentDB resource provider")
 
     If it is **not** registered, select the **Microsoft.DocumentDB** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 9. In the **filter**, type `stream` to view the **Microsoft.StreamAnalytics** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/streamanalytics-registered.png "Microsoft.StreamAnalytics resource provider")
+    ![The resource provider status is Registered.](images/streamanalytics-registered.png "Microsoft.StreamAnalytics resource provider")
 
     If it is **not** registered, select the **Microsoft.StreamAnalytics** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 10. In the **filter**, type `event` to view the **Microsoft.EventHub** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/eventhub-registered.png "Microsoft.EventHub resource provider")
+    ![The resource provider status is Registered.](images/eventhub-registered.png "Microsoft.EventHub resource provider")
 
     If it is **not** registered, select the **Microsoft.EventHub** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 11. In the **filter**, type `keyvault` to view the **Microsoft.KeyVault** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/keyvault-registered.png "Microsoft.KeyVault resource provider")
+    ![The resource provider status is Registered.](images/keyvault-registered.png "Microsoft.KeyVault resource provider")
 
     If it is **not** registered, select the **Microsoft.KeyVault** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 12. In the **filter**, type `storage` to view the **Microsoft.Storage** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/storage-registered.png "Microsoft.Storage resource provider")
+    ![The resource provider status is Registered.](images/storage-registered.png "Microsoft.Storage resource provider")
 
     If it is **not** registered, select the **Microsoft.Storage** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 13. In the **filter**, type `compute` to view the **Microsoft.Compute** provider. Make sure the status is set to **Registered**.
 
-    ![The resource provider status is Registered.](media/compute-registered.png "Microsoft.Compute resource provider")
+    ![The resource provider status is Registered.](images/compute-registered.png "Microsoft.Compute resource provider")
 
     If it is **not** registered, select the **Microsoft.Compute** resource provider, then select **Register**.
 
-    ![The register button is highlighted.](media/register-resource-provider.png "Register")
+    ![The register button is highlighted.](images/register-resource-provider.png "Register")
 
 
 ### Task 2: Create a resource group in Azure
@@ -125,11 +125,11 @@ In Azure, you must register specific resource providers on your subscription bef
 
 2. On the Azure Portal home screen, select the **Menu** button on the top-left corner **(1)**. Hover over **Resource groups (2)**, then select **+ Create (3)**.
 
-    ![The Create button is highlighted.](media/new-resourcegroup.png "Create resource group")
+    ![The Create button is highlighted.](images/new-resourcegroup.png "Create resource group")
 
 3. On the **Create a resource group** screen, select your desired Subscription and Region. For Resource group, enter **`data-engineering-synapse`** (make sure the name is unique), then select the **Review + Create** button. **Copy the resource group name** and save it in Notepad or similar for later reference.
 
-    ![The Create a resource group form is displayed populated with Synapse-MCW as the resource group name.](media/bhol_resourcegroupform.png)
+    ![The Create a resource group form is displayed populated with Synapse-MCW as the resource group name.](images/bhol_resourcegroupform.png)
 
 4. Select the **Create** button once validation has passed.
 
@@ -141,7 +141,7 @@ We highly recommend executing the PowerShell scripts on an Azure Virtual Machine
 
 1. In the [Azure portal](https://portal.azure.com), type in "virtual machines" in the top search menu and then select **Virtual machines** from the results.
 
-    ![In the Services search result list, Virtual machines is selected.](media/azure-create-vm-search.png "Virtual machines")
+    ![In the Services search result list, Virtual machines is selected.](images/azure-create-vm-search.png "Virtual machines")
 
 2. Select **+ Add** on the Virtual machines page and then select the **Virtual machine** option.
 
@@ -163,27 +163,27 @@ We highly recommend executing the PowerShell scripts on an Azure Virtual Machine
    | Select inbound ports           | _select `RDP (3389)`_                              |
    | Licensing                      | _select the option to confirm that you have an  eligible Windows 10 license with multi-tenant hosting rights._ |
 
-   ![The form fields are completed with the previously described settings.](media/azure-create-vm-1.png "Create a virtual machine")
+   ![The form fields are completed with the previously described settings.](images/azure-create-vm-1.png "Create a virtual machine")
 
 4. Select **Review + create**. On the review screen, select **Create**. After the deployment completes, select **Go to resource** to go to the virtual machine.
 
-    ![The Go to resource option is selected.](media/azure-create-vm-2.png "Go to resource")
+    ![The Go to resource option is selected.](images/azure-create-vm-2.png "Go to resource")
 
 5. Select **Connect** from the actions menu and choose **RDP**.
 
-    ![The option to connect to the virtual machine via RDP is selected.](media/azure-vm-connect.png "Connect via RDP")
+    ![The option to connect to the virtual machine via RDP is selected.](images/azure-vm-connect.png "Connect via RDP")
 
 6. On the **Connect** tab, select **Download RDP File**.
 
-    ![Download the RDP file to connect to the Power BI virtual machine.](media/azure-vm-connect-2.png "Download RDP File")
+    ![Download the RDP file to connect to the Power BI virtual machine.](images/azure-vm-connect-2.png "Download RDP File")
 
 7. Open the RDP file and select **Connect** to access the virtual machine. When prompted for credentials, enter `labuser` for the username and the password you chose.
 
-    ![Connect to a remote host.](media/azure-vm-connect-3.png "Connect to a remote host")
+    ![Connect to a remote host.](images/azure-vm-connect-3.png "Connect to a remote host")
 
     Click Yes to connect despite security certificate errors when prompted.
 
-    ![The Yes button is highlighted.](media/rdp-connect-certificate.png "Remote Desktop Connection")
+    ![The Yes button is highlighted.](images/rdp-connect-certificate.png "Remote Desktop Connection")
 
 8. Install [Power BI Desktop](https://www.microsoft.com/download/details.aspx?id=58494) on the VM.
 
@@ -208,7 +208,7 @@ The below ARM template deploys several Azure resources for the labs, including A
    - **Unique Suffix**: This unique suffix will be used naming resources that will created as part of your deployment, such as your initials followed by the current date in YYYYMMDD format (ex. `jdh20210615`). Make sure you follow correct Azure [Resource naming](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging#resource-naming) conventions.
    - **SQL Administrator Login Password**: Provide a strong password for the SQLPool that will be created as part of your deployment. [Visit here](https://docs.microsoft.com/en-us/sql/relational-databases/security/password-policy?view=sql-server-ver15#password-complexity) to read about password rules in place. Your password will be needed during the next steps. Make sure you have your password noted and secured.
 
-   ![The form is configured as described.](media/synapse-arm-template.png "Deploy an Azure Synapse Analytics workspace")
+   ![The form is configured as described.](images/synapse-arm-template.png "Deploy an Azure Synapse Analytics workspace")
 
 3. Select the **Review + create** button, then **Create**. The provisioning of your deployment resources will take approximately 6 minutes.
 
@@ -246,7 +246,7 @@ Perform all of the steps below from your **deployment VM**:
 
     cd c:\labfiles
 
-    git clone https://github.com/solliancenet/dp-203-v2.git data-engineering-ilt-deployment
+    git clone https://github.com/ctesta-oneillmsft/xyz data-engineering-ilt-deployment
     ```
 
 2. Install Azure PowerShell module
@@ -320,20 +320,32 @@ Perform all of the steps below from your **deployment VM**:
 5. Change directories to the root of this repo within your local file system.
 
     ```powershell
-    cd C:\labfiles\data-engineering-ilt-deployment\Instructions\Labs\00\artifacts\environment-setup\automation\
+    cd C:\labfiles\data-engineering-ilt-deployment\AllFiles\00\artifacts\environment-setup\automation\
     ```
 
-6. Execute `Connect-AzAccount` and sign in to your Microsoft user account when prompted.
+6. Execute the following and sign in to your Microsoft user account when prompted:
+
+    ```powershell
+    Connect-AzAccount
+    ```
 
     > [!WARNING]: You may receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription. The first one will be selected for further use. You can ignore this at this point. When you execute the environment setup, you will choose the subscription in which you deployed the environment resources.
 
-7. Execute `.\01-environment-setup.ps1`
+7. Execute the following and sign in to your Microsoft user account when prompted.
+
+    ```powershell
+    az login
+    ```
+
+    > If you receive the following error, and have already closed and re-opened the PowerShell window, you need to restart your computer and restart the steps in this task: `The term 'az' is not recognized as the name of a cmdlet, function, script file, or operable program`.
+
+8. Execute `.\01-environment-setup.ps1`
 
    1. You will be prompted to setup your Azure PowerShell and Azure CLI context.
 
    2. If you have more than one Azure Subscription, you will be prompted to enter the name of your desired Azure Subscription. You can copy and paste the value from the list to select one. For example:
 
-       ![A subscription is copied and pasted into the text entry.](media/select-desired-subscription.png "Select desired subscription")
+       ![A subscription is copied and pasted into the text entry.](images/select-desired-subscription.png "Select desired subscription")
 
    3. Enter the name of the resource group you created at the beginning of the environment setup (such as `data-engineering-synapse`). This will make sure automation runs against the correct environment you provisioned in Azure.
 
@@ -345,16 +357,16 @@ Time to complete: 5 minutes
 
 1. While the PowerShell script executes, go back to the Azure portal. Navigate to your Azure resource group for this lab, then select the Azure Databricks workspace.
 
-    ![The Azure Databricks service is highlighted.](media/select-databricks-workspace.png "Select Azure Databricks service")
+    ![The Azure Databricks service is highlighted.](images/select-databricks-workspace.png "Select Azure Databricks service")
 
 2. Select **Launch Workspace** to open your Databricks workspace in a new tab.
 
-    ![The Azure Databricks Launch Workspace button is displayed.](media/databricks-launch-workspace.png "Launch Workspace")
+    ![The Azure Databricks Launch Workspace button is displayed.](images/databricks-launch-workspace.png "Launch Workspace")
 
 3. In the left-hand menu of your Databricks workspace, select **Compute**.
 4. Select **Create Cluster** to add a new cluster.
 
-    ![The create cluster page](media/create-a-cluster.png)
+    ![The create cluster page](images/create-a-cluster.png)
 
 5. Enter a name for your cluster, such as `Test Cluster`.
 6. Select the **Databricks RuntimeVersion**. We recommend the latest runtime and **Scala 2.12**.

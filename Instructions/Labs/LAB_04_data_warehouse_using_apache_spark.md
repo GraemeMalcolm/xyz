@@ -11,7 +11,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 5 - Explore, transform, and load data into the Data Warehouse using Apache Spark](#module-5---explore-transform-and-load-data-into-the-data-warehouse-using-apache-spark)
+- [Module 4 - Explore, transform, and load data into the Data Warehouse using Apache Spark](#module-4---explore-transform-and-load-data-into-the-data-warehouse-using-apache-spark)
   - [Lab details](#lab-details)
   - [Lab setup and pre-requisites](#lab-setup-and-pre-requisites)
   - [Exercise 0: Create a new dedicated SQL pool and run setup script](#exercise-0-create-a-new-dedicated-sql-pool-and-run-setup-script)
@@ -86,7 +86,7 @@ This lab requires a dedicated SQL pool. As a first step, create a new dedicated 
 6. Change directories to the root of this repo within your local file system.
 
     ```powershell
-    cd C:\labfiles\data-engineering-ilt-deployment\Instructions\Labs\00\artifacts\environment-setup\automation\
+    cd C:\labfiles\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
     ```
 
 7. Execute `Connect-AzAccount` and sign in to your Microsoft user account when prompted.

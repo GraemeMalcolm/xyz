@@ -135,11 +135,6 @@ Control-SQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGrou
 Wait-ForSQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -TargetStatus Online
 }
 
-Write-Information "Scale up the $($sqlPoolName) SQL pool to prepare for data import."
-
-Control-SQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -Action scale -SKU DW500c
-Wait-ForSQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -TargetStatus Online
-
 Ensure-ValidTokens $true
 
 Write-Information "Create SQL logins in master SQL pool"
@@ -191,119 +186,7 @@ $result = Create-SQLPoolKeyVaultLinkedService -TemplatesPath $templatesPath -Wor
                 -UserName "asa.sql.highperf" -KeyVaultLinkedServiceName $keyVaultName -SecretName $keyVaultSQLUserSecretName
 Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
 
-<# Day 1-3#>
-
-Write-Information "Create data sets for data load in SQL pool $($sqlPoolName)"
-
-$loadingDatasets = @{
-        wwi02_date_adls = $dataLakeAccountName
-                wwi02_product_adls = $dataLakeAccountName
-                wwi02_sale_small_adls = $dataLakeAccountName
-                wwi02_date_asa = $sqlPoolName.ToLower()
-                wwi02_product_asa = $sqlPoolName.ToLower()
-                wwi02_sale_small_asa = "$($sqlPoolName.ToLower())_highperf"
-}
-
-foreach ($dataset in $loadingDatasets.Keys) {
-        Refresh-Tokens
-        Write-Information "Creating dataset $($dataset)"
-        $result = Create-Dataset -DatasetsPath $datasetsPath -WorkspaceName $workspaceName -Name $dataset -LinkedServiceName $loadingDatasets[$dataset]
-        Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-}
-
-Write-Information "Create pipeline to load the SQL pool"
 Refresh-Tokens
-
-$params = @{
-        BLOB_STORAGE_LINKED_SERVICE_NAME = $blobStorageAccountName
-}
-$loadingPipelineName = "Setup - Load SQL Pool (global)"
-$fileName = "load_sql_pool_from_data_lake"
-
-Write-Information "Creating pipeline $($loadingPipelineName)"
-
-$result = Create-Pipeline -PipelinesPath $pipelinesPath -WorkspaceName $workspaceName -Name $loadingPipelineName -FileName $fileName -Parameters $params
-Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-
-Write-Information "Running pipeline $($loadingPipelineName)"
-Refresh-Tokens
-
-$result = Run-Pipeline -WorkspaceName $workspaceName -Name $loadingPipelineName
-$result = Wait-ForPipelineRun -WorkspaceName $workspaceName -RunId $result.runId
-$result
-
-Ensure-ValidTokens
-
-Write-Information "Deleting pipeline $($loadingPipelineName)"
-
-$result = Delete-ASAObject -WorkspaceName $workspaceName -Category "pipelines" -Name $loadingPipelineName
-Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-
-foreach ($dataset in $loadingDatasets.Keys) {
-        Refresh-Tokens
-        Write-Information "Deleting dataset $($dataset)"
-        $result = Delete-ASAObject -WorkspaceName $workspaceName -Category "datasets" -Name $dataset
-        Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-}
-
-<# POC - Day 4 - Must be run after Day 3 content/pipeline loads#>
-
-# Write-Information "Create wwi_poc schema and tables in $($sqlPoolName)"
-
-# $params = @{}
-# $result = Execute-SQLScriptFile -SQLScriptsPath $sqlScriptsPath -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -FileName "16-create-poc-schema" -Parameters $params
-# $result
-
-# Write-Information "Create the [wwi_poc.Sale] table in SQL pool $($sqlPoolName)"
-
-# $result = Execute-SQLScriptFile -SQLScriptsPath $sqlScriptsPath -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -FileName "17-create-wwi-poc-sale-heap" -Parameters $params
-# $result
-
-# Write-Information "Create data sets for PoC data load in SQL pool $($sqlPoolName)"
-
-# $loadingDatasets = @{
-#         wwi02_poc_customer_adls = $dataLakeAccountName
-#         wwi02_poc_customer_asa = $sqlPoolName.ToLower()
-# }
-
-# foreach ($dataset in $loadingDatasets.Keys) {
-#         Refresh-Tokens
-#         Write-Information "Creating dataset $($dataset)"
-#         $result = Create-Dataset -DatasetsPath $datasetsPath -WorkspaceName $workspaceName -Name $dataset -LinkedServiceName $loadingDatasets[$dataset]
-#         Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-# }
-
-Refresh-Tokens
-
-# Write-Information "Create pipeline to load PoC data into the SQL pool"
-
-# $params = @{
-#         BLOB_STORAGE_LINKED_SERVICE_NAME = $blobStorageAccountName
-# }
-# $loadingPipelineName = "Setup - Load SQL Pool"
-# $fileName = "import_poc_customer_data"
-
-# Write-Information "Creating pipeline $($loadingPipelineName)"
-
-# $result = Create-Pipeline -PipelinesPath $pipelinesPath -WorkspaceName $workspaceName -Name $loadingPipelineName -FileName $fileName -Parameters $params
-# Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-
-# Write-Information "Running pipeline $($loadingPipelineName)"
-
-# $result = Run-Pipeline -WorkspaceName $workspaceName -Name $loadingPipelineName
-# $result = Wait-ForPipelineRun -WorkspaceName $workspaceName -RunId $result.runId
-# $result
-
-# Write-Information "Deleting pipeline $($loadingPipelineName)"
-
-# $result = Delete-ASAObject -WorkspaceName $workspaceName -Category "pipelines" -Name $loadingPipelineName
-# Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-
-# foreach ($dataset in $loadingDatasets.Keys) {
-#         Write-Information "Deleting dataset $($dataset)"
-#         $result = Delete-ASAObject -WorkspaceName $workspaceName -Category "datasets" -Name $dataset
-#         Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-# }
 
 Write-Information "Create tables in wwi_perf schema in SQL pool $($sqlPoolName)"
 
@@ -321,11 +204,6 @@ foreach ($script in $scripts.Keys) {
         Execute-SQLScriptFile -SQLScriptsPath $sqlScriptsPath -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -FileName $script -ForceReturn $true
         Wait-ForSQLQuery -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -Label $scripts[$script] -ReferenceTime $refTime
 }
-
-Write-Information "Scale down the $($sqlPoolName) SQL pool to DW200c after data import."
-
-Control-SQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -Action scale -SKU DW200c
-Wait-ForSQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -TargetStatus Online
 
 Write-Information "Create linked service for SQL pool $($sqlPoolName) with user asa.sql.import01"
 
@@ -347,40 +225,3 @@ $linkedServiceName = "$($sqlPoolName.ToLower())_workload02"
 $result = Create-SQLPoolKeyVaultLinkedService -TemplatesPath $templatesPath -WorkspaceName $workspaceName -Name $linkedServiceName -DatabaseName $sqlPoolName `
                 -UserName "asa.sql.workload02" -KeyVaultLinkedServiceName $keyVaultName -SecretName $keyVaultSQLUserSecretName
 Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-
-
-# Write-Information "Create data sets for Lab 08"
-
-# $datasets = @{
-#         wwi02_sale_small_workload_01_asa = "$($sqlPoolName.ToLower())_workload01"
-#         wwi02_sale_small_workload_02_asa = "$($sqlPoolName.ToLower())_workload02"
-# }
-
-# foreach ($dataset in $datasets.Keys) {
-#         Refresh-Tokens
-#         Write-Information "Creating dataset $($dataset)"
-#         $result = Create-Dataset -DatasetsPath $datasetsPath -WorkspaceName $workspaceName -Name $dataset -LinkedServiceName $datasets[$dataset]
-#         Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-# }
-
-# Write-Information "Create pipelines for Lab 08"
-
-# $params = @{}
-# $workloadPipelines = [ordered]@{
-#         execute_business_analyst_queries = "Lab 08 - Execute Business Analyst Queries"
-#         execute_data_analyst_and_ceo_queries = "Lab 08 - Execute Data Analyst and CEO Queries"
-# }
-
-# foreach ($pipeline in $workloadPipelines.Keys) {
-#         Write-Information "Creating workload pipeline $($workloadPipelines[$pipeline])"
-#         $result = Create-Pipeline -PipelinesPath $pipelinesPath -WorkspaceName $workspaceName -Name $workloadPipelines[$pipeline] -FileName $pipeline -Parameters $params
-#         Wait-ForOperation -WorkspaceName $workspaceName -OperationId $result.operationId
-# }
-
-# Write-Information "Pausing the $($sqlPoolName) SQL pool"
-
-# $result = Get-SQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName
-# if ($result.properties.status -eq "Online") {
-# Control-SQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -Action pause
-# Wait-ForSQLPool -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName -SQLPoolName $sqlPoolName -TargetStatus Paused
-# }

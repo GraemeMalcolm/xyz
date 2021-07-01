@@ -6,7 +6,7 @@ The following instructions enables learners to prepare their lab environments fo
 
 ## Lab details
 
-- [Module 0 - Lab environment setup](#module-0---lab-environment-setup)
+- [Module 0 - Lab environment setup with a pre-installed virtual machine](#module-0---lab-environment-setup-with-a-pre-installed-virtual-machine)
   - [Lab details](#lab-details)
   - [Requirements](#requirements)
   - [Exercise 1: Azure setup](#exercise-1-azure-setup)
@@ -142,7 +142,7 @@ The below ARM template deploys several Azure resources for the labs, including A
 
 1. Deploy the workspace through the following Azure ARM template (select the button below):
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsolliancenet%2FDP-203T00-Data-Engineering-on-Microsoft-Azure%2Foptimizations%2FInstructions%2FLabs%2F00%2Fartifacts%2Fenvironment-setup%2fautomation%2F00-asa-workspace-core.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton" /></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fctesta-oneillmsft%2Fxyz%2Fmain%2FAllfiles%2F00%2Fartifacts%2Fenvironment-setup%2fautomation%2F00-asa-workspace-core.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton" /></a>
 
 2. On the **Custom deployment** form fill in the fields described below.
 
@@ -197,7 +197,7 @@ Perform all of the steps below from your Virtual Machine:
 5. Change directories to the root of this repo within your local file system.
 
     ```powershell
-    cd C:\labfiles\data-engineering-ilt-deployment\Instructions\Labs\00\artifacts\environment-setup\automation\
+    cd C:\labfiles\data-engineering-ilt-deployment\AllFiles\00\artifacts\environment-setup\automation\
     ```
 
 6. Execute `Connect-AzAccount` and sign in to your Microsoft user account when prompted.

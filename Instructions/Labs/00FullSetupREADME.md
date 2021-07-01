@@ -195,7 +195,7 @@ The below ARM template deploys several Azure resources for the labs, including A
 
 1. Deploy the workspace through the following Azure ARM template (select the button below):
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsolliancenet%2Fdp-203-v2%2Fmain%2FInstructions%2FLabs%2F00%2Fartifacts%2Fenvironment-setup%2fautomation%2F00-asa-workspace-core.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton" /></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fctesta-oneillmsft%2Fxyz%2Fmain%2FAllfiles%2F00%2Fartifacts%2Fenvironment-setup%2fautomation%2F00-asa-workspace-core.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton" /></a>
 
 2. On the **Custom deployment** form fill in the fields described below.
 

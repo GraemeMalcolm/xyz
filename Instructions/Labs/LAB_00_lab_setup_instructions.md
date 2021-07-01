@@ -202,7 +202,7 @@ Perform all of the steps below from your Virtual Machine:
 
 6. Execute `Connect-AzAccount` and sign in to your Microsoft user account when prompted.
 
-7. You will receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription. The first one will be selected for further use. **Copy the tenant id** so that you can paste it into the next command.
+7. You will receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription. The first one will be selected for further use. **Copy the tenant id** that is shown in the table so that you can paste it into the next command.
 
 8. Execute `az login --tenant <<tenant id>>` and paste the tenant id from the previous step. You will be directed to the browser to sign into your Azure account. Once you have signd in, move to the next step.
 

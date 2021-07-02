@@ -37,7 +37,7 @@ In this module, the student will be able to:
 
 ## Exercise 0: Create a new dedicated SQL pool and run setup script
 
-Time to complete: 24 minutes **(*you can continue the lab while the script runs*)**
+Time to complete: 6-7 minutes **(*you can continue the lab while the script runs*)**
 
 This lab requires a dedicated SQL pool. As a first step, create a new dedicated SQL pool. Then, execute a PowerShell script to load the dedicated SQL pool with data.
 
@@ -79,11 +79,19 @@ This lab requires a dedicated SQL pool. As a first step, create a new dedicated 
     cd C:\labfiles\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
     ```
 
-5. Execute `Connect-AzAccount` and sign in to your Microsoft user account when prompted.
+5. Execute the following to sign in to your Microsoft user account when prompted:
+
+    ```powershell
+    Connect-AzAccount
+    ```
 
     > [!WARNING]: You may receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription.
 
-6. Execute `az login`. You will be directed to the browser to sign into your Azure account. Once you have signd in, move to the next step.
+6. Execute the following. You will be directed to the browser to sign into your Azure account. Once you have signed in, move to the next step:
+
+    ```powershell
+    az login
+    ```
 
 7. **Wait until the dedicated SQL pool is created**, then execute `.\02-environment-setup-sql.ps1`
 
@@ -97,7 +105,7 @@ This lab requires a dedicated SQL pool. As a first step, create a new dedicated 
 
 8. **Continue on to Exercise 1** while this script is running.
 
-> **NOTE** This script will take about 20 minutes to complete.
+> **NOTE** This script will take about 2-3 minutes to complete.
 > 
 > If it seems as though the script hangs while creating linked services for the SQLPool01 dedicated SQL pool (there are 3), hit `Enter` on the keyboard. This tends to refresh the PowerShell script and allows it to continue to the end.
 
@@ -315,7 +323,7 @@ In this task, you will use a Synapse Spark notebook to explore a few of the file
 
     ![The develop hub is highlighted.](images/develop-hub.png "Develop hub")
 
-2. Download the Jupyter notebook for this exercise from <https://github.com/ctesta-oneillmsft/xyz/tree/main/Allfiles/synapse-apache-spark-notebooks/Lab%202%20-%20Explore%20with%20Spark.ipynb>. This will download a file named `Lab 2 - Explore with Spark.ipynb`.
+2. Download the Jupyter notebook for this exercise from [**here (Lab 2 - Explore with Spark.ipynb)**](../../Allfiles/synapse-apache-spark-notebooks/Lab%202%20-%20Explore%20with%20Spark.ipynb). This will download a file named `Lab 2 - Explore with Spark.ipynb`.
 
     The link will open the contents of the file in a new browser window. Select **Save As** in the File menu. By default, the browser will attempt to save this as a text file. If you have the option, set `Save as type` to **All files (*.*)**. Make sure the file name ends with `.ipynb`.
 

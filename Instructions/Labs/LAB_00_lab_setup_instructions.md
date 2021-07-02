@@ -1,6 +1,6 @@
 # Module 0 - Lab environment setup with a pre-installed virtual machine
 
-Time to complete: 56 minutes
+Time to complete: 66 minutes
 
 The following instructions enables learners to prepare their lab environments for the modules that follow. Please run through these instructions prior to starting Module 1. These instructions are provided on the assumption you will be using a pre-installed virtual machine provided for the course. If you do not have a pre-installed virtual machine provided, you can use the [following instructions](FullSetupREADME.md) to setup the course.
 
@@ -165,23 +165,21 @@ The below ARM template deploys several Azure resources for the labs, including A
 
 ## Exercise 2: Setup Synapse Analytics workspace
 
-Time to complete: 29 minutes
+Time to complete: 39 minutes
 ### Task 1: Execute setup scripts
 
-Time to complete: 20 minutes
+Time to complete: 30 minutes
 
 Perform all of the steps below from your Virtual Machine:
 
 1. Open a PowerShell Window as an administrator, run the following command to download the artifacts
 
     ```powershell
-    rmdir c:\labfiles
-
     mkdir c:\labfiles
 
     cd c:\labfiles
 
-    git clone -b optimizations https://github.com/ctesta-oneillmsft/xyz.git data-engineering-ilt-deployment
+    git clone https://github.com/ctesta-oneillmsft/xyz.git data-engineering-ilt-deployment
     ```
 
 

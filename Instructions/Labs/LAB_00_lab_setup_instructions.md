@@ -182,16 +182,15 @@ Perform all of the steps below from your Virtual Machine:
     git clone https://github.com/ctesta-oneillmsft/xyz.git data-engineering-ilt-deployment
     ```
 
+2. **Important step:** Make sure the **ARM template deployment has completed**. If it has not, these scripts will fail. *Wait until the deployment successfully completes*.
 
-1. **Important step:** Make sure the **ARM template deployment has completed**. If it has not, these scripts will fail. *Wait until the deployment successfully completes*.
-
-2. Open Windows PowerShell as an Administrator and execute the following to set the `PSGallery` as a trusted repository:
+3. Open Windows PowerShell as an Administrator and execute the following to set the `PSGallery` as a trusted repository:
 
     ```powershell
     Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
     ```
 
-3. Execute the following to set the execution policy to Unrestricted so you can run the local PowerShell script file:
+4. Execute the following to set the execution policy to Unrestricted so you can run the local PowerShell script file:
 
     ```powershell
     Set-ExecutionPolicy Unrestricted
@@ -199,25 +198,33 @@ Perform all of the steps below from your Virtual Machine:
 
     > [!Note]: If you receive a prompt that you are installing the module from an untrusted repository, select **Yes to All** to proceed with the setup.
 
-4. Execute the following to import the `Az.CosmosDB` module:
+5. Execute the following to import the `Az.CosmosDB` module:
 
     ```powershell
     Import-Module Az.CosmosDB
     ```
 
-5. Change directories to the root of this repo within your local file system.
+6. Change directories to the root of this repo within your local file system.
 
     ```powershell
     cd C:\labfiles\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
     ```
 
-6. Execute `Connect-AzAccount` and sign in to your Microsoft user account when prompted.
+7. Execute the following to sign in to your Microsoft user account when prompted.
 
-7. You will receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription. The first one will be selected for further use. **Copy the tenant id** that is shown in the table so that you can paste it into the next command.
+    ```powershell
+    Connect-AzAccount
+    ```
 
-8. Execute `az login --tenant <<tenant id>>` and paste the tenant id from the previous step. You will be directed to the browser to sign into your Azure account. Once you have signd in, move to the next step.
+8. You will receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription. The first one will be selected for further use. **Copy the tenant id** that is shown in the table so that you can paste it into the next command.
 
-9. Execute `.\01-environment-setup.ps1`
+9. Execute the following to paste the tenant id from the previous step. You will be directed to the browser to sign into your Azure account. Once you have signed in, move to the next step.
+
+    ```powershell
+    az login --tenant <<tenant id>>
+    ```
+
+10. Execute `.\01-environment-setup.ps1`
 
    1. If you have more than one Azure Subscription, you will be prompted to enter the name of your desired Azure Subscription. Copy and paste the value `Azure Pass - Sponsorship` from the list to select one. For example:
 
@@ -225,7 +232,7 @@ Perform all of the steps below from your Virtual Machine:
 
         > [!WARNING]: You may receive the message "Unable to acquire token for tenant...". This can be safely ignored.
 
-   3. Enter the name of the resource group named `data-engineering-synapse`. This will make sure automation runs against the correct environment you provisioned in Azure.
+   2. Enter the name of the resource group named `data-engineering-synapse`. This will make sure automation runs against the correct environment you provisioned in Azure.
 
        > **NOTE** This script will take about 15-20 minutes to complete. Move onto the next task while this script is executing
 

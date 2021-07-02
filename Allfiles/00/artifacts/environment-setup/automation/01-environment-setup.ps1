@@ -557,29 +557,6 @@ $download = $true;
 #generate new one just in case...
 $destinationSasKey = New-AzStorageContainerSASToken -Container "wwi-02" -Context $dataLakeContext -Permission rwdl
 
-if ($download)
-{
-        Write-Information "Copying sample sales raw data directories from the public data account..."
-
-        $dataDirectories = @{
-                profile01 = "wwi-02,wwi-02/online-user-profiles-01/"
-                profile02 = "wwi-02,wwi-02/online-user-profiles-02/"
-        }
-
-        foreach ($dataDirectory in $dataDirectories.Keys) {
-
-                $vals = $dataDirectories[$dataDirectory].tostring().split(",");
-
-                $source = $publicDataUrl + $vals[1];
-
-                $path = $vals[0];
-
-                $destination = $dataLakeStorageBlobUrl + $path + $destinationSasKey
-                Write-Information "Copying directory $($source) to $($destination)"
-                & $azCopyCommand copy $source $destination --recursive=true
-        }
-}
-
 Write-Information "Counting Cosmos DB item in database $($cosmosDbDatabase), container $($cosmosDbContainer)"
 $documentCount = Count-CosmosDbDocuments -SubscriptionId $subscriptionId -ResourceGroupName $resourceGroupName -CosmosDbAccountName $cosmosDbAccountName `
                 -CosmosDbDatabase $cosmosDbDatabase -CosmosDbContainer $cosmosDbContainer

@@ -179,7 +179,7 @@ Perform all of the steps below from your Virtual Machine:
 
     cd c:\labfiles
 
-    git clone -b optimizations https://github.com/ctesta-oneillmsft/xyz.git data-engineering-ilt-deployment
+    git clone https://github.com/ctesta-oneillmsft/xyz.git data-engineering-ilt-deployment
     ```
 
 

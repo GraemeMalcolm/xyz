@@ -38,7 +38,7 @@ In this lab, you will use an Azure Databricks workspace and perform Structured S
 1. In the **Import Notebooks** dialog box, select the URL and paste in the following URL:
 
     ```
-    https://github.com/solliancenet/microsoft-learning-paths-databricks-notebooks/blob/master/data-engineering/DBC/11-Delta-Lake-Architecture.dbc?raw=true
+    https://github.com/ctesta-oneillmsft/xyz/tree/main/Allfiles/microsoft-learning-paths-databricks-notebooks/data-engineering/DBC/11-Delta-Lake-Architecture.dbc?raw=true
     ```
 
 1. Select **Import**.
@@ -71,7 +71,7 @@ Also, Hyperspace allows users to compare their original plan versus the updated 
 
 3. Select **+**, then **Notebook** to create a new Synapse notebook.
 
-    ![The new notebook menu item is highlighted.](images/new-notebook.png "New Notebook")
+    ![The new notebook menu item is highlighted.](images/new-notebook1.png "New Notebook")
 
 4. Enter **Hyperspace** for the notebook name **(1)**, then select the **Properties** button above **(2)** to hide the properties pane.
 

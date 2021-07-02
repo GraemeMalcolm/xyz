@@ -217,12 +217,12 @@ Perform the following steps below from your Virtual Machine:
     Connect-AzAccount
     ```
 
-7. You will receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription. The first one will be selected for further use. **Copy the tenant id** that is shown in the table so that you can paste it into the next command.
+7. You will receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription.
 
-8. Execute the following to paste the tenant id from the previous step. You will be directed to the browser to sign into your Azure account. Once you have signed in, move to the next step.
+8. Execute the following code. You will be directed to the browser to sign into your Azure account. Once you have signed in, move to the next step.
 
     ```powershell
-    az login --tenant <<tenant id>>
+    az login
     ```
 
 9. Execute `.\01-environment-setup.ps1`

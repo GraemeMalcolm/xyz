@@ -81,9 +81,11 @@ This lab requires a dedicated SQL pool. As a first step, create a new dedicated 
 
 5. Execute `Connect-AzAccount` and sign in to your Microsoft user account when prompted.
 
-    > [!WARNING]: You may receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription. The first one will be selected for further use. You can ignore this at this point. When you execute the environment setup, you will choose the subscription in which you deployed the environment resources.
+    > [!WARNING]: You may receive the message "TenantId 'xxxxxx-xxxx-xxxx-xxxx' contains more than one active subscription. Copy the tenant id that is shown in the table so that you can paste it into the next command.
 
-6. **Wait until the dedicated SQL pool is created**, then execute `.\02-environment-setup-sql.ps1`
+6. Execute `az login --tenant <<tenant id>>` and paste the tenant id from the previous step. You will be directed to the browser to sign into your Azure account. Once you have signd in, move to the next step.
+
+7. **Wait until the dedicated SQL pool is created**, then execute `.\02-environment-setup-sql.ps1`
 
    1. You will be prompted to setup your Azure PowerShell and Azure CLI context.
 
@@ -93,7 +95,7 @@ This lab requires a dedicated SQL pool. As a first step, create a new dedicated 
 
    3. Enter the name of the resource group you created at the beginning of the environment setup (such as `data-engineering-synapse`). This will make sure automation runs against the correct environment you provisioned in Azure.
 
-7. **Continue on to Exercise 1** while this script is running.
+8. **Continue on to Exercise 1** while this script is running.
 
 > **NOTE** This script will take about 20 minutes to complete.
 > 

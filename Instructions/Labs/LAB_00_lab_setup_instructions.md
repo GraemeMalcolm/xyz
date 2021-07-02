@@ -172,6 +172,19 @@ Time to complete: 20 minutes
 
 Perform all of the steps below from your Virtual Machine:
 
+1. Open a PowerShell Window as an administrator, run the following command to download the artifacts
+
+    ```powershell
+    rmdir c:\labfiles
+
+    mkdir c:\labfiles
+
+    cd c:\labfiles
+
+    git clone -b optimizations https://github.com/ctesta-oneillmsft/xyz.git data-engineering-ilt-deployment
+    ```
+
+
 1. **Important step:** Make sure the **ARM template deployment has completed**. If it has not, these scripts will fail. *Wait until the deployment successfully completes*.
 
 2. Open Windows PowerShell as an Administrator and execute the following to set the `PSGallery` as a trusted repository:

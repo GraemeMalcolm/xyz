@@ -163,7 +163,7 @@ The below ARM template deploys several Azure resources for the labs, including A
 
     > **Note**: You may experience a deployment step failing in regards to Role Assignment. This error may safely be ignored.
 
-Perform the following steps below from your Virtual Machine:
+    Perform the following step below from your Virtual Machine:
 
 1. Open a PowerShell Window as an administrator, run the following command to download the artifacts
 

@@ -315,7 +315,7 @@ In this task, you will use a Synapse Spark notebook to explore a few of the file
 
     ![The develop hub is highlighted.](images/develop-hub.png "Develop hub")
 
-2. Download the Jupyter notebook for this exercise from <https://github.com/ctesta-oneillmsft/xyz/tree/main/Allfiles/synapse-apache-spark-notebooks/Explore%20with%20Spark.ipynb>. This will download a file named `Lab 2 - Explore with Spark.ipynb`.
+2. Download the Jupyter notebook for this exercise from <https://github.com/ctesta-oneillmsft/xyz/tree/main/Allfiles/synapse-apache-spark-notebooks/Explore%20with%20Spark.ipynb>. This will download a file named `Explore with Spark.ipynb`.
 
     The link will open the contents of the file in a new browser window. Select **Save As** in the File menu. By default, the browser will attempt to save this as a text file. If you have the option, set `Save as type` to **All files (*.*)**. Make sure the file name ends with `.ipynb`.
 

@@ -56,7 +56,7 @@ This lab teaches you how Azure Synapse Link enables seamless connectivity of an 
 
 This lab teaches you how to process streaming data with Azure Stream Analytics. You will ingest vehicle telemetry data into Event Hubs, then process that data in real time, using various windowing functions in Azure Stream Analytics. You will output the data to Azure Synapse Analytics. Finally, you will learn how to scale the Stream Analytics job to increase throughput.
 
-#### [Module 11: Create a Stream Processing Solution with Event Hubs and Azure Databricks](LAB_11_stream_with_azure_databricks)
+#### [Module 11: Create a Stream Processing Solution with Event Hubs and Azure Databricks](LAB_11_stream_with_azure_databricks.md)
 
 This lab teaches you how to ingest and process streaming data at scale with Event Hubs and Spark Structured Streaming in Azure Databricks. You will learn the key features and uses of Structured Streaming. You will implement sliding windows to aggregate over chunks of data and apply watermarking to remove stale data. Finally, you will connect to Event Hubs to read and write streams.
 

@@ -109,7 +109,7 @@ Having robust Internet security is a must for every technology system. One way t
 
     ![On the Synapse Workspace screen, the + Add Client IP button is selected from the toolbar menu.](images/lab5_synapsefirewalladdclientipmenu.png)
 
-> **Note**: When connecting to Synapse from your local network, certain ports need to be open. To support the functions of Synapse Studio, ensure outgoing TCP ports 80, 443, and 1143, and UDP port 53 are open.
+    > **Note**: When connecting to Synapse from your local network, certain ports need to be open. To support the functions of Synapse Studio, ensure outgoing TCP ports 80, 443, and 1143, and UDP port 53 are open.
 
 ## Exercise 2 - Securing the Azure Synapse Analytics workspace and managed services
 

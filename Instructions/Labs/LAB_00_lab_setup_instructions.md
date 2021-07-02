@@ -175,8 +175,6 @@ Perform all of the steps below from your Virtual Machine:
 1. Open a PowerShell Window as an administrator, run the following command to download the artifacts
 
     ```powershell
-    rmdir c:\labfiles
-
     mkdir c:\labfiles
 
     cd c:\labfiles

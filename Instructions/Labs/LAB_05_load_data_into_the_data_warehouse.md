@@ -297,6 +297,13 @@ PolyBase vs. COPY *(insert 2019 small data set (339,507,246 rows))*:
 - COPY (Heap: **5:08**, clustered columnstore: **6:52**)
 - PolyBase (Heap: **5:59**)
 
+When running the dedicated SQL pool named SQLPool01 at DW200, the results are as follows:
+
+PolyBase vs. COPY *(insert 2019 small data set (339,507,246 rows))*:
+
+- COPY (Heap: **8:49**, clustered columnstore: **11:29**)
+- PolyBase (Heap: **8:57**)
+
 ### Task 5: Use COPY to load text file with non-standard row delimiters
 
 One of the advantages COPY has over PolyBase is that it supports custom column and row delimiters.

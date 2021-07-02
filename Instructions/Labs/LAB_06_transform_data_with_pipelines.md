@@ -886,7 +886,7 @@ To do this, you will build a mapping data flow that performs the following tasks
         | isTopProduct | isTopProduct |
         | isPreferredProduct | isPreferredProduct |
 
-        ![The mapping settings are configured as described.](images/data-flow-user-profiles-new-sink-settings-mapping2.png "Mapping")
+            ![The mapping settings are configured as described.](images/data-flow-user-profiles-new-sink-settings-mapping2.png "Mapping")
 
         > Notice that we have chosen to keep more fields for the data lake sink vs. the SQL pool sink (`visitorId` and `preferredProductId`). This is because we aren't adhering to a fixed destination schema (like a SQL table), and because we want to retain the original data as much as possible in the data lake.
 

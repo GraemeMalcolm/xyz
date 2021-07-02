@@ -51,7 +51,7 @@ Your data processing in Azure Databricks is accomplished by defining DataFrames 
 1. In the **Import Notebooks** dialog box, select the URL and paste in the following URL:
 
  ```
-  https://github.com/solliancenet/microsoft-learning-paths-databricks-notebooks/blob/master/data-engineering/DBC/04-Working-With-Dataframes.dbc?raw=true
+  https://github.com/ctesta-oneillmsft/xyz/blob/main/Allfiles/microsoft-learning-paths-databricks-notebooks/data-engineering/DBC/04-Working-With-Dataframes.dbc?raw=true
  ```
 
 1. Select **Import**.

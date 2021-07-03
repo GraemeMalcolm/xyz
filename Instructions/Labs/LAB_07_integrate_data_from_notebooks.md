@@ -308,8 +308,6 @@ In this segment of the lab, you will create a Synapse Spark notebook to make the
 
 6. Create a new cell underneath by selecting the **+** button and selecting the **</> Code cell** item. The + button is located beneath the notebook cell on the left.
 
-    ![The Add Code menu option is highlighted.](images/new-cell.png "Add code")
-
 7. Enter and execute the following in the new cell to populate a new dataframe called `topPurchases`, create a new temporary view named `top_purchases`, and show the first 100 rows:
 
     ```python

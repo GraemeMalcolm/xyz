@@ -123,11 +123,11 @@ When dealing with connectivity to external data sources and services, sensitive 
 
 2. From the left menu, under Settings, select **Access Policies**.
 
-3. Observe that Managed Service Identity (MSI) representing your Synapse workspace (it has a name similar to `asaworkspaceNNNNNN`) has already been listed under Application and it has 4 selected Secret Permissions.
+3. Observe that Managed Service Identity (MSI) representing your Synapse workspace (it has a name similar to `asaworkspaceNNNNNN`) has already been listed under Application and it has 4 selected Secret Management Operations.
 
     ![The Synapse workspace account and its assigned secret permissions are highlighted.](images/key-vault-access-policies.png "Access policies")
 
-4. Select the drop-down that reads `4 selected` under `Secret Permissions`, observe that Get (which allows your workspace to retrieve the values of secrets from Key Vault) and List (which allows your workspace to enumerate secrets) are set.
+4. Select the drop-down that reads `4 selected` under `Secret Management Operations`, observe that Get (which allows your workspace to retrieve the values of secrets from Key Vault) and List (which allows your workspace to enumerate secrets) are set.
 
 ### Task 2 - Use Azure Key Vault for secrets when creating Linked Services
 

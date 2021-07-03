@@ -72,7 +72,7 @@ When you query Parquet files using serverless SQL pools, you can explore the dat
             SUM(Quantity) AS [(sum) Quantity]
     FROM
         OPENROWSET(
-            BULK 'https://asadatalakeSUFFIX.dfs.core.windows.net/wwi-02/sale-small/Year=2016/Quarter=Q4/Month=12/Day=20161231/sale-small-20161231-snappy.parquet',
+            BULK 'https://asadatalakeSUFFIX.dfs.core.windows.net/wwi-02/sale-small/Year=2016/Quarter=Q4/Month=12/Day=20191231/sale-small-20191231-snappy.parquet',
             FORMAT='PARQUET'
         ) AS [r] GROUP BY r.TransactionDate, r.ProductId;
     ```
@@ -93,7 +93,7 @@ When you query Parquet files using serverless SQL pools, you can explore the dat
 
     > Notice how we updated the path to include all Parquet files in all subfolders of `sale-small/Year=2019`.
 
-    The output should be **339507246** records.
+    The output should be **4124857** records.
 
 ### Task 2: Create an external table for 2019 sales data
 

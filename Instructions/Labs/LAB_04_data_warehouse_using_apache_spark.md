@@ -359,15 +359,15 @@ You recommend using the Data hub to view the Parquet files in the connected stor
 
     ![The data hub is highlighted.](images/data-hub.png "Data hub")
 
-3. Select the **Linked** tab **(1)** and expand the `Azure Data Lake Storage Gen2` group, then expand the primary data lake storage account (*the name may differ from what you see here; it is the first storage account listed*). Select the **wwi-02** container **(2)** and browser to the `sale-small/Year=2010/Quarter=Q4/Month=12/Day=20101231` folder **(3)**. Right-click the Parquet file **(4)**, select **New notebook (5)**, then select **Load to DataFrame *6)**.
+3. Select the **Linked** tab **(1)** and expand the `Azure Data Lake Storage Gen2` group, then expand the primary data lake storage account (*the name may differ from what you see here; it is the first storage account listed*). Select the **wwi-02** container **(2)** and browser to the `sale-small/Year=2019/Quarter=Q4/Month=12/Day=20191231` folder **(3)**. Right-click the Parquet file **(4)**, select **New notebook (5)**, then select **Load to DataFrame *6)**.
 
-    ![The Parquet file is displayed as described.](images/2010-sale-parquet-new-notebook.png "New notebook")
+    ![The Parquet file is displayed as described.](images/2019-sale-parquet-new-notebook.png "New notebook")
 
     This generates a notebook with PySpark code to load the data in a Spark dataframe and display 10 rows with the header.
 
-4. Make sure the Spark pool is attached to the notebook. **Do not run/execute the cell at this stage**, as we need to create a variable for the name of your datalake first.
+4. Make sure the Spark pool is attached to the notebook. **Do not run/execute the cell at this stage**, as we need to create a variable for the name of your data lake first.
 
-    ![The Spark pool is highlighted.](images/2010-sale-parquet-notebook-sparkpool.png "Notebook")
+    ![The Spark pool is highlighted.](images/2019-sale-parquet-notebook-sparkpool.png "Notebook")
 
     The Spark pool provides the compute for all notebook operations. If we look at the bottom of the notebook, we'll see that the pool has not started. When you run a cell in the notebook while the pool is idle, the pool will start and allocate resources. This is a one-time operation until the pool auto-pauses from being idle for too long.
 
@@ -389,15 +389,15 @@ You recommend using the Data hub to view the Parquet files in the connected stor
 
     ![Run all is highlighted.](images/notebook-run-all.png "Run all")
 
-    > **Note:** The first time you run a notebook in a Spark pool, Azure Synapse creates a new session. This can take approximately 3-5 minutes.
+    > **Note:** The first time you run a notebook in a Spark pool, Azure Synapse creates a new session. This can take approximately 2-3 minutes.
 
     > **Note:** To run just the cell, either hover over the cell and select the _Run cell_ icon to the left of the cell, or select the cell then type **Ctrl+Enter** on your keyboard.
 
 7. After the cell run is complete, change the View to **Chart** in the cell output.
 
-    ![The Chart view is highlighted.](images/2010-sale-parquet-table-output.png "Cell 1 output")
+    ![The Chart view is highlighted.](images/2019-sale-parquet-table-output.png "Cell 1 output")
 
-    By default, the cell outputs to a table view when we use the `display()` function. We see in the output the sales transaction data stored in the Parquet file for December 31, 2010. Let's select the **Chart** visualization to see a different view of the data.
+    By default, the cell outputs to a table view when we use the `display()` function. We see in the output the sales transaction data stored in the Parquet file for December 31, 2019. Let's select the **Chart** visualization to see a different view of the data.
 
 8. Select the **View options** button to the right.
 
@@ -409,7 +409,7 @@ You recommend using the Data hub to view the Parquet files in the connected stor
 
 10. The chart visualization is displayed. Hover over the bars to view details.
 
-    ![The configured chart is displayed.](images/2010-sale-parquet-chart.png "Chart view")
+    ![The configured chart is displayed.](images/2019-sale-parquet-chart.png "Chart view")
 
 11. Create a new cell underneath by selecting **+**, then **</> Code cell** underneath the chart.
 
@@ -425,17 +425,17 @@ You recommend using the Data hub to view the Parquet files in the connected stor
 
     ```text
     root
-        |-- TransactionId: string (nullable = true)
-        |-- CustomerId: integer (nullable = true)
-        |-- ProductId: short (nullable = true)
-        |-- Quantity: short (nullable = true)
-        |-- Price: decimal(29,2) (nullable = true)
-        |-- TotalAmount: decimal(29,2) (nullable = true)
-        |-- TransactionDate: integer (nullable = true)
-        |-- ProfitAmount: decimal(29,2) (nullable = true)
-        |-- Hour: byte (nullable = true)
-        |-- Minute: byte (nullable = true)
-        |-- StoreId: short (nullable = true)
+     |-- TransactionId: string (nullable = true)
+     |-- CustomerId: integer (nullable = true)
+     |-- ProductId: short (nullable = true)
+     |-- Quantity: byte (nullable = true)
+     |-- Price: decimal(38,18) (nullable = true)
+     |-- TotalAmount: decimal(38,18) (nullable = true)
+     |-- TransactionDate: integer (nullable = true)
+     |-- ProfitAmount: decimal(38,18) (nullable = true)
+     |-- Hour: byte (nullable = true)
+     |-- Minute: byte (nullable = true)
+     |-- StoreId: short (nullable = true)
     ```
 
     Spark evaluates the file contents to infer the schema. This automatic inference is usually sufficient for data exploration and most transformation tasks. However, when you load data to an external resource like a SQL table, sometimes you need to declare your own schema and apply that to the dataset. For now, the schema looks good.
@@ -460,7 +460,7 @@ You recommend using the Data hub to view the Parquet files in the connected stor
 
     The output shows the same data we saw in the chart above, but now with `sum` and `avg` aggregates **(1)**. Notice that we use the **`alias`** method **(2)** to change the column names.
 
-    ![The aggregates output is displayed.](images/2010-sale-parquet-aggregates.png "Aggregates output")
+    ![The aggregates output is displayed.](images/2019-sale-parquet-aggregates.png "Aggregates output")
 
 ## Exercise 3: Transforming data with DataFrames in Spark pools in Azure Synapse Analytics
 
@@ -727,13 +727,11 @@ The Apache Spark pool to Synapse SQL connector is a data source implementation f
     display(dfsales.limit(10))
     ```
 
-    > **Note**: It can take over 3 minutes for this cell to execute.
-    >
-    > The `datalake` variable we created in the first cell is used here as part of the file path.
+    > **Note**: The `datalake` variable we created in the first cell is used here as part of the file path.
 
     ![The cell output is displayed.](images/2019-sales.png "2019 sales")
 
-    Compare the file path in the cell above to the file path in the first cell. Here we are using a relative path to load **all December 2019 sales** data from the Parquet files located in `sale-small`, vs. just December 31, 2010 sales data.
+    Compare the file path in the cell above to the file path in the first cell. Here we are using a relative path to load **all December 2019 sales** data from the Parquet files located in `sale-small`, vs. just December 31, 2019 sales data.
 
     Next, let's load the `TopSales` data from the SQL table we created earlier into a new Spark dataframe, then join it with this new `dfsales` dataframe. To do this, we must once again use the `%%spark` magic on a new cell since we'll use the Apache Spark pool to Synapse SQL connector to retrieve data from the SQL database. Then we need to add the dataframe contents to a new temporary view so we can access the data from Python.
 

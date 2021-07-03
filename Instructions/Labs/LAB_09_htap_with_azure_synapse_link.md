@@ -276,7 +276,7 @@ Tailwind Traders is trying to solve how they can use the list of preferred produ
     profiles.count()
     ```
 
-    You should see a count result of 100,000.
+    You should see a count result of 99,999.
 
 8. We want to use the `preferredProducts` column array and `productReviews` column array for each user and create a graph of products that are from their preferred list that match with products that they have reviewed. To do this, we need to create two new DataFrames that contain flattened values from those two columns so we can join them in a later step. Enter the following in a new cell and **run** it:
 

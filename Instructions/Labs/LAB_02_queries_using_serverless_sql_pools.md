@@ -50,7 +50,7 @@ When you query Parquet files using serverless SQL pools, you can explore the dat
 
     ![The Data menu item is highlighted.](images/data-hub.png "Data hub")
 
-2. Select the **Linked** tab **(1)** and expand **Azure Data Lake Storage Gen2**. Expand the `asaworkspaceXX` primary ADLS Gen2 account **(2)** and select the **`wwi-02`** container **(3)**. Navigate to the `sale-small/Year=2016/Quarter=Q4/Month=12/Day=20161231` folder **(4)**. Right-click on the `sale-small-20161231-snappy.parquet` file **(5)**, select **New SQL script (6)**, then **Select TOP 100 rows (7)**.
+2. Select the **Linked** tab **(1)** and expand **Azure Data Lake Storage Gen2**. Expand the `asaworkspaceXX` primary ADLS Gen2 account **(2)** and select the **`wwi-02`** container **(3)**. Navigate to the `sale-small/Year=2019/Quarter=Q4/Month=12/Day=20191231` folder **(4)**. Right-click on the `sale-small-20191231-snappy.parquet` file **(5)**, select **New SQL script (6)**, then **Select TOP 100 rows (7)**.
 
     ![The Data hub is displayed with the options highlighted.](images/data-hub-parquet-select-rows.png "Select TOP 100 rows")
 

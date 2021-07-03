@@ -329,7 +329,7 @@ Issues include invalid characters in the revenue currency data, and misaligned c
 5. Under **Source settings**, configure the following:
 
     - **Output stream name**: Enter `CampaignAnalytics`.
-    - **Source type**: Select `Dataset`.
+    - **Source type**: Select `Integration dataset`.
     - **Dataset**: Select `asal400_campaign_analytics_source`.
     - **Options**: Select `Allow schema drift` and leave the other options unchecked.
     - **Skip line count**: Enter `1`. This allows us to skip the header row which has two fewer columns than the rest of the rows in the CSV file, truncating the last two data columns.
@@ -581,7 +581,7 @@ To do this, you will build a mapping data flow that performs the following tasks
 6. Under **Source settings**, configure the following:
 
     - **Output stream name**: Enter `EcommerceUserProfiles`.
-    - **Source type**: Select `Dataset`.
+    - **Source type**: Select `Integration dataset`.
     - **Dataset**: Select `asal400_ecommerce_userprofiles_source`.
 
         ![The source settings are configured as described.](images/data-flow-user-profiles-source-settings.png "Source settings")
@@ -677,7 +677,7 @@ To do this, you will build a mapping data flow that performs the following tasks
 15. Under **Source settings**, configure the following:
 
     - **Output stream name**: Enter `UserProfiles`.
-    - **Source type**: Select `Dataset`.
+    - **Source type**: Select `Integration dataset`.
     - **Dataset**: Select `asal400_customerprofile_cosmosdb`.
 
         ![The source settings are configured as described.](images/data-flow-user-profiles-source2-settings.png "Source settings")

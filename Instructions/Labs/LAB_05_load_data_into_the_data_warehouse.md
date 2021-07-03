@@ -10,7 +10,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 7 - Ingest and load data into the Data Warehouse](#module-7---ingest-and-load-data-into-the-data-warehouse)
+- [Module 5 - Ingest and load data into the Data Warehouse](#module-5---ingest-and-load-data-into-the-data-warehouse)
   - [Lab details](#lab-details)
   - [Lab setup and pre-requisites](#lab-setup-and-pre-requisites)
   - [Exercise 0: Start the dedicated SQL pool](#exercise-0-start-the-dedicated-sql-pool)
@@ -18,9 +18,8 @@ In this module, the student will be able to:
     - [Task 1: Create staging tables](#task-1-create-staging-tables)
     - [Task 2: Configure and run PolyBase load operation](#task-2-configure-and-run-polybase-load-operation)
     - [Task 3: Configure and run the COPY statement](#task-3-configure-and-run-the-copy-statement)
-    - [Task 4: Load data into the clustered columnstore table](#task-4-load-data-into-the-clustered-columnstore-table)
-    - [Task 5: Use COPY to load text file with non-standard row delimiters](#task-5-use-copy-to-load-text-file-with-non-standard-row-delimiters)
-    - [Task 6: Use PolyBase to load text file with non-standard row delimiters](#task-6-use-polybase-to-load-text-file-with-non-standard-row-delimiters)
+    - [Task 4: Use COPY to load text file with non-standard row delimiters](#task-4-use-copy-to-load-text-file-with-non-standard-row-delimiters)
+    - [Task 5: Use PolyBase to load text file with non-standard row delimiters](#task-5-use-polybase-to-load-text-file-with-non-standard-row-delimiters)
   - [Exercise 2: Petabyte-scale ingestion with Azure Synapse Pipelines](#exercise-2-petabyte-scale-ingestion-with-azure-synapse-pipelines)
     - [Task 1: Configure workload management classification](#task-1-configure-workload-management-classification)
     - [Task 2: Create pipeline with copy activity](#task-2-create-pipeline-with-copy-activity)
@@ -217,11 +216,11 @@ PolyBase requires the following elements:
     GO
     ```
 
-    > **Note:** The `/sale-small/Year=2019/` folder's Parquet files contain **339,507,246 rows**.
+    > **Note:** The `/sale-small/Year=2019/` folder's Parquet files contain **4,124,857 rows**.
 
 4. Select **Run** from the toolbar menu to execute the SQL command.
 
-5. In the query window, replace the script with the following to load the data into the `wwi_staging.SalesHeap` table. This command takes approximately 10 minutes to execute:
+5. In the query window, replace the script with the following to load the data into the `wwi_staging.SalesHeap` table:
 
     ```sql
     INSERT INTO [wwi_staging].[SaleHeap]
@@ -229,13 +228,14 @@ PolyBase requires the following elements:
     FROM [wwi_external].[Sales]
     ```
 
-    > While this is running, read the rest of the lab instructions to familiarize yourself with the content.
-
 6. In the query window, replace the script with the following to see how many rows were imported:
 
     ```sql
     SELECT COUNT(1) FROM wwi_staging.SaleHeap(nolock)
     ```
+
+
+7. Select **Run** from the toolbar menu to execute the SQL command. You should see a result of `4124857`.
 
 ### Task 3: Configure and run the COPY statement
 
@@ -257,9 +257,7 @@ Now let's see how to perform the same load operation with the COPY statement.
     GO
     ```
 
-2. Select **Run** from the toolbar menu to execute the SQL command. It takes a few minutes to execute this command. **Take note** of how long it took to execute this query.
-
-    > While this is running, read the rest of the lab instructions to familiarize yourself with the content.
+2. Select **Run** from the toolbar menu to execute the SQL command. Notice how little scripting is required to perform a similar load operation.
 
 3. In the query window, replace the script with the following to see how many rows were imported:
 
@@ -267,44 +265,11 @@ Now let's see how to perform the same load operation with the COPY statement.
     SELECT COUNT(1) FROM wwi_staging.SaleHeap(nolock)
     ```
 
-4. Select **Run** from the toolbar menu to execute the SQL command. You should see a result of `339507246`.
+4. Select **Run** from the toolbar menu to execute the SQL command. You should see a result of `4124857`.
 
 Do the number of rows match for both load operations? Which activity was fastest? You should see that both copied the same amount of data in roughly the same amount of time.
 
-### Task 4: Load data into the clustered columnstore table
-
-For both of the load operations above, we inserted data into the heap table. What if we inserted into the clustered columnstore table instead? Is there really a performance difference? Let's find out!
-
-1. In the query window, replace the script with the following to load data into the clustered columnstore `Sale` table using the COPY statement. Be sure to replace `SUFFIX` with the id for your workspace. **DO NOT RUN** this command. In the interest of time, we will skip this command since it takes around 7 minutes to execute:
-
-    ```sql
-    -- Replace SUFFIX with the workspace default storage account name.
-    COPY INTO wwi_staging.Sale
-    FROM 'https://asadatalakeSUFFIX.dfs.core.windows.net/wwi-02/sale-small/Year=2019'
-    WITH (
-        FILE_TYPE = 'PARQUET',
-        COMPRESSION = 'SNAPPY'
-    )
-    GO
-    ```
-
-What were the results? Did the load operation take more or less time writing to `Sale` table vs. the heap (`SaleHeap`) table?
-
-When running the dedicated SQL pool named SQLPool01 at DW500, the results are as follows:
-
-PolyBase vs. COPY *(insert 2019 small data set (339,507,246 rows))*:
-
-- COPY (Heap: **5:08**, clustered columnstore: **6:52**)
-- PolyBase (Heap: **5:59**)
-
-When running the dedicated SQL pool named SQLPool01 at DW200, the results are as follows:
-
-PolyBase vs. COPY *(insert 2019 small data set (339,507,246 rows))*:
-
-- COPY (Heap: **8:49**, clustered columnstore: **11:29**)
-- PolyBase (Heap: **8:57**)
-
-### Task 5: Use COPY to load text file with non-standard row delimiters
+### Task 4: Use COPY to load text file with non-standard row delimiters
 
 One of the advantages COPY has over PolyBase is that it supports custom column and row delimiters.
 
@@ -358,7 +323,7 @@ The data has the following fields: `Date`, `NorthAmerica`, `SouthAmerica`, `Euro
 
     ![The results are displayed in a chart.](images/daily-sales-counts-chart.png "DailySalesCounts chart")
 
-### Task 6: Use PolyBase to load text file with non-standard row delimiters
+### Task 5: Use PolyBase to load text file with non-standard row delimiters
 
 Let's try this same operation using PolyBase.
 
@@ -525,7 +490,7 @@ To run loads with appropriate compute resources, create loading users designated
 
     ![The Parquet format is highlighted.](images/new-dataset-adlsgen2-parquet.png "Select format")
 
-9. In the properties, set the name to **asal400_december_sales (1)** and select the **asadatalakeNNNNNN** linked service **(2)**. Browse to the **`wwi-02/campaign-analytics/sale-20161230-snappy.parquet`** file location **(3)**, select **From sample file (4)** for schema import. Browse to C:\labfiles\data-engineering-ilt-deployment\Allfiles\samplefiles\sale-small-20100102-snappy.parquet on your computer, then browse to it in the **Select file** field **(5)**. Select **OK (6)**.
+9. In the properties, set the name to **asal400_december_sales (1)** and select the **asadatalakeNNNNNN** linked service **(2)**. Browse to the **`wwi-02/campaign-analytics/sale-20161230-snappy.parquet`** file location **(3)**, select **From sample file (4)** for schema import. Browse to `C:\labfiles\data-engineering-ilt-deployment\Allfiles\samplefiles\sale-small-20100102-snappy.parquet` on your computer, then browse to it in the **Select file** field **(5)**. Select **OK (6)**.
 
     ![The properties are displayed.](images/pipeline-copy-sales-source-dataset.png "Dataset properties")
 

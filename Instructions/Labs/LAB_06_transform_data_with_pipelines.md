@@ -432,7 +432,7 @@ Issues include invalid characters in the revenue currency data, and misaligned c
 
     - **Output stream name**: Enter `CampaignAnalyticsASA`.
     - **Incoming stream**: Select `SelectCampaignAnalyticsColumns`.
-    - **Sink type**: Select `Dataset`.
+    - **Sink type**: Select `Integration dataset`.
     - **Dataset**: Select `asal400_wwi_campaign_analytics_asa`, which is the CampaignAnalytics SQL table.
     - **Options**: Check `Allow schema drift` and uncheck `Validate schema`.
 

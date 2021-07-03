@@ -72,14 +72,14 @@ When you query Parquet files using serverless SQL pools, you can explore the dat
             SUM(Quantity) AS [(sum) Quantity]
     FROM
         OPENROWSET(
-            BULK 'https://asadatalakeSUFFIX.dfs.core.windows.net/wwi-02/sale-small/Year=2016/Quarter=Q4/Month=12/Day=20191231/sale-small-20191231-snappy.parquet',
+            BULK 'https://asadatalakeSUFFIX.dfs.core.windows.net/wwi-02/sale-small/Year=2019/Quarter=Q4/Month=12/Day=20191231/sale-small-20191231-snappy.parquet',
             FORMAT='PARQUET'
         ) AS [r] GROUP BY r.TransactionDate, r.ProductId;
     ```
 
     ![The T-SQL query above is displayed within the query window.](images/sql-serverless-aggregates.png "Query window")
 
-5. Let's move on from this single file from 2016 and transition to a newer data set. We want to figure out how many records are contained within the Parquet files for all 2019 data. This information is important for planning how we optimize for importing the data into Azure Synapse Analytics. To do this, we'll replace the query with the following (be sure to update the name of your data lake in the BULK statement, by replacing `[asadatalakeSUFFIX]`):
+5. Let's move on from this single file from 2019 and transition to a newer data set. We want to figure out how many records are contained within the Parquet files for all 2019 data. This information is important for planning how we optimize for importing the data into Azure Synapse Analytics. To do this, we'll replace the query with the following (be sure to update the name of your data lake in the BULK statement, by replacing `[asadatalakeSUFFIX]`):
 
     ```sql
     SELECT

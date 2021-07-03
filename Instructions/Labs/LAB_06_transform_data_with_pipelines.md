@@ -857,7 +857,7 @@ To do this, you will build a mapping data flow that performs the following tasks
     - **Linked service**: Select the default workspace data lake storage account (example: `asaworkspaceinaday84-WorspaceDefaultStorage`).
     - **Options**: Check `Allow schema drift` and uncheck `Validate schema`.
 
-            ![The sink settings are shown.](images/data-flow-user-profiles-new-sink-settings2.png "Sink settings")
+        ![The sink settings are shown.](images/data-flow-user-profiles-new-sink-settings2.png "Sink settings")
 
 35. Select **Settings**, then configure the following:
 

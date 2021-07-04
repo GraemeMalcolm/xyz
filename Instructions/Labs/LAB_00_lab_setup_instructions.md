@@ -168,9 +168,9 @@ The below ARM template deploys several Azure resources for the labs, including A
 1. Open a PowerShell Window as an administrator, run the following command to download the artifacts
 
     ```powershell
-    mkdir c:\labfiles
+    mkdir c:\dp203
 
-    cd c:\labfiles
+    cd c:\dp203
 
     git clone https://github.com/ctesta-oneillmsft/xyz.git data-engineering-ilt-deployment
     ```
@@ -208,7 +208,7 @@ Perform the following steps below from your Virtual Machine:
 5. Change directories to the root of this repo within your local file system.
 
     ```powershell
-    cd C:\labfiles\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
+    cd C:\dp203\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
     ```
 
 6. Execute the following to sign in to your Microsoft user account when prompted.

@@ -401,7 +401,7 @@ In this segment of the lab, you will create a Synapse Spark notebook to make the
     print('before filter: ', topPreferredProducts.count(), ', after filter: ', top5Products.count())
     ```
 
-    The output should be similar to `before filter:  997873 , after filter:  85020`.
+    The output should be similar to `before filter:  997817 , after filter:  85015`.
 
 12. Calculate the top five products overall, based on those that are both preferred by customers and purchased the most. To do this, execute the following in a new cell:
 

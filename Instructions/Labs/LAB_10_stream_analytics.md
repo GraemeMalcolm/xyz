@@ -203,7 +203,7 @@ In this task, you will configure Stream Analytics to use the event hub you creat
 
     ![The Stream Analytics job is selected in the resource group.](images/rg-stream-analytics.png "resource group")
 
-4. Within the Stream Analytics job, select **Storage account settings** in the left-hand menu, then select **Add storage account**. Since we will use Synapse Analytics as one of the outputs, we need to first configure the job storage account.
+4. Within the Stream Analytics job, you may be prompted to select **Storage account settings** in the left-hand menu, then select **Add storage account**. Since we will use Synapse Analytics as one of the outputs, we need to first configure the job storage account. If not go to step 7. 
 
     ![The storage account settings link and add storage account button are highlighted.](images/asa-storage-account.png "Storage account settings")
 

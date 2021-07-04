@@ -76,7 +76,7 @@ This lab requires a dedicated SQL pool. As a first step, create a new dedicated 
 4. Change directories to the root of this repo within your local file system.
 
     ```powershell
-    cd C:\labfiles\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
+    cd C:\dp203\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
     ```
 
 5. Execute the following to sign in to your Microsoft user account when prompted:
@@ -323,21 +323,15 @@ In this task, you will use a Synapse Spark notebook to explore a few of the file
 
     ![The develop hub is highlighted.](images/develop-hub.png "Develop hub")
 
-2. Download the Jupyter notebook for this exercise from [**here (Lab 2 - Explore with Spark.ipynb)**](https://raw.githubusercontent.com/ctesta-oneillmsft/xyz/main/Allfiles/synapse-apache-spark-notebooks/Lab%202%20-%20Explore%20with%20Spark.ipynb). This will download a file named `Lab 2 - Explore with Spark.ipynb`.
-
-    The link will open the contents of the file in a new browser window. Select **Save As** in the File menu. By default, the browser will attempt to save this as a text file. If you have the option, set `Save as type` to **All files (*.*)**. Make sure the file name ends with `.ipynb`.
-
-    ![Save As dialog.](images/file-save-as.png "Save As")
-
-3. On the Develop hub, select the Add New Resource (**+**) button and then select **Import**.
+2. On the Develop hub, select the Add New Resource (**+**) button and then select **Import**.
 
     ![On the Develop hub, the Add New Resource (+) button is highlighted and Import is highlighted in the menu.](images/develop-hub-add-new-resource-import.png "Develop hub import notebook")
 
-4. Select the **Lab 2 - Explore with Spark** you downloaded in step 2 and select Open.
+3. Select the **Lab 2 - Explore with Spark** in the C:\dp203\data-engineering-ilt-deployment\Allfiles\synapse-apache-spark-notebooks folder.
 
-5. Follow the instructions contained within the notebook to complete the remainder of this task. When you are done with the notebook, return to this guide and continue with the next section.
+4. Follow the instructions contained within the notebook to complete the remainder of this task. When you are done with the notebook, return to this guide and continue with the next section.
 
-6. Once you have completed the **Lab 2 - Explore with Spark** notebook, select on the stop session button on the far right hand side of the toolbar to release the Spark cluster for the next exercise.
+5. Once you have completed the **Lab 2 - Explore with Spark** notebook, select on the stop session button on the far right hand side of the toolbar to release the Spark cluster for the next exercise.
 
     ![The stop session button is highlighted.](images/stop-session.png "Stop session")
 

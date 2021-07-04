@@ -358,7 +358,7 @@ In this task, you will configure and run the data generator. The data generator 
 
     ![The Run anyway button is highlighted.](images/microsoft-defender-runanyway.png "Run anyway")
 
-6.  A new console window will open, and you should see it start to send data after a few seconds. Once you see that it is sending data to Event Hubs, _minimize_ the window and keep it running in the background.
+6.  A new console window will open, and you should see it start to send data after a few seconds. Once you see that it is sending data to Event Hubs, _minimize_ the window and keep it running in the background. Allow this to run for a mimimum of three minutes before moving onto the next step.
 
     ![Screenshot of the console window.](images/transaction-generator.png 'Console window')
 

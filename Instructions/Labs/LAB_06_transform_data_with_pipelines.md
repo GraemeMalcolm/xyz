@@ -10,7 +10,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 8 - Transform data with Azure Data Factory or Azure Synapse Pipelines](#module-8---transform-data-with-azure-data-factory-or-azure-synapse-pipelines)
+- [Module 6 - Transform data with Azure Data Factory or Azure Synapse Pipelines](#module-6---transform-data-with-azure-data-factory-or-azure-synapse-pipelines)
   - [Lab details](#lab-details)
   - [Lab setup and pre-requisites](#lab-setup-and-pre-requisites)
   - [Exercise 0: Start the dedicated SQL pool](#exercise-0-start-the-dedicated-sql-pool)

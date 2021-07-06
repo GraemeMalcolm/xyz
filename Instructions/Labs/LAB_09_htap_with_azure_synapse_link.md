@@ -10,7 +10,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 12 - Support Hybrid Transactional Analytical Processing (HTAP) with Azure Synapse Link](#module-12---support-hybrid-transactional-analytical-processing-htap-with-azure-synapse-link)
+- [Module 9 - Support Hybrid Transactional Analytical Processing (HTAP) with Azure Synapse Link](#module-9---support-hybrid-transactional-analytical-processing-htap-with-azure-synapse-link)
   - [Lab details](#lab-details)
   - [Lab setup and pre-requisites](#lab-setup-and-pre-requisites)
   - [Exercise 1: Lab setup](#exercise-1-lab-setup)

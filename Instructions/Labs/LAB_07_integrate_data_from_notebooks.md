@@ -8,7 +8,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 9 - Integrate data from notebooks with Azure Data Factory or Azure Synapse Pipelines](#module-9---integrate-data-from-notebooks-with-azure-data-factory-or-azure-synapse-pipelines)
+- [Module 7 - Integrate data from notebooks with Azure Data Factory or Azure Synapse Pipelines](#module-7---integrate-data-from-notebooks-with-azure-data-factory-or-azure-synapse-pipelines)
   - [Lab details](#lab-details)
   - [Lab setup and pre-requisites](#lab-setup-and-pre-requisites)
   - [Exercise 1: Linked service and datasets](#exercise-1-linked-service-and-datasets)

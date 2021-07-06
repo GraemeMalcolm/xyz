@@ -13,7 +13,7 @@ In this module the student will be able to:
 
 ## Lab details
 
-- [Module 6 - Data exploration and transformation in Azure Databricks](#module-6---data-exploration-and-transformation-in-azure-databricks)
+- [Module 3 - Data exploration and transformation in Azure Databricks](#module-3---data-exploration-and-transformation-in-azure-databricks)
   - [Lab details](#lab-details)
   - [Lab 1 - Working with DataFrames](#lab-1---working-with-dataframes)
     - [Before the hands-on lab](#before-the-hands-on-lab)

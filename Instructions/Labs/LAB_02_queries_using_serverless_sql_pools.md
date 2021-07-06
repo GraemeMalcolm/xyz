@@ -12,7 +12,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 4 - Run interactive queries using serverless SQL pools](#module-4---run-interactive-queries-using-serverless-sql-pools)
+- [Module 2 - Run interactive queries using serverless SQL pools](#module-4---run-interactive-queries-using-serverless-sql-pools)
   - [Lab details](#lab-details)
   - [Lab setup and pre-requisites](#lab-setup-and-pre-requisites)
   - [Exercise 1: Querying a Data Lake Store using serverless SQL pools in Azure Synapse Analytics](#exercise-1-querying-a-data-lake-store-using-serverless-sql-pools-in-azure-synapse-analytics)

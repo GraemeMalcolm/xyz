@@ -103,7 +103,7 @@ Rather than creating a script with `OPENROWSET` and a path to the root 2019 fold
 
     ![The Data menu item is highlighted.](images/data-hub.png "Data hub")
 
-2. Select the **Linked** tab **(1)** and expand **Azure Data Lake Storage Gen2**. Expand the `asaworkspaceXX` primary ADLS Gen2 account **(2)** and select the **`wwi-02`** container **(3)**. Navigate to the `sale-small/Year=2019/Quarter=Q4/Month=12/Day=20191231` folder **(4)**. Right-click on the `sale-small-20190101-snappy.parquet` file **(5)**, select **New SQL script (6)**, then **Create external table (7)**.
+2. Select the **Linked** tab **(1)** and expand **Azure Data Lake Storage Gen2**. Expand the `asaworkspaceXX` primary ADLS Gen2 account **(2)** and select the **`wwi-02`** container **(3)**. Navigate to the `sale-small/Year=2019/Quarter=Q4/Month=12/Day=20191231` folder **(4)**. Right-click on the `sale-small-20191231-snappy.parquet` file **(5)**, select **New SQL script (6)**, then **Create external table (7)**.
 
     ![The create external link is highlighted.](images/create-external-table.png "Create external table")
 

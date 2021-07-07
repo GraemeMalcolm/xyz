@@ -43,6 +43,7 @@ Your data processing in Azure Databricks is accomplished by defining DataFrames 
 #### Task 1: Clone the Databricks archive
 
 1. If you do not currently have your Azure Databricks workspace open: in the Azure portal, navigate to your deployed Azure Databricks workspace and select **Launch Workspace**.
+1. In the left pane, select **Compute** and click on **Test cluster**. If the cluster has not started, click on **Start**. Please note you will have to wait 5 - 7 minutes for the cluster to start up before moving onto the next step.
 1. In the left pane, select **Workspace** > **Users**, and select your username (the entry with the house icon).
 1. In the pane that appears, select the arrow next to your name, and select **Import**.
 
@@ -169,3 +170,5 @@ In your Azure Databricks workspace, open the **07-Dataframe-Advanced-Methods** f
 Open the **3.Exercise-Deduplication-of-Data** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
 
 The goal of this exercise is to put into practice some of what you have learned about using DataFrames, including renaming columns. The instructions are provided within the notebook, along with empty cells for you to do your work. At the bottom of the notebook are additional cells that will help verify that your work is accurate.
+
+Once you have completed this, in the left pane, select **Compute** and click on **Test cluster**. Click on **Terminate** to stop the cluster.

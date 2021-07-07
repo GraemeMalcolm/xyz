@@ -29,6 +29,7 @@ In this lab, you will use an Azure Databricks workspace and perform Structured S
 #### Task 1: Clone the Databricks archive
 
 1. If you do not currently have your Azure Databricks workspace open: in the Azure portal, navigate to your deployed Azure Databricks workspace and select **Launch Workspace**.
+1. In the left pane, select **Compute** and click on **Test cluster**. If the cluster has not started, click on **Start**. Please note you will have to wait 5 - 7 minutes for the cluster to start up before moving onto the next step.
 1. In the left pane, select **Workspace** > **Users**, and select your username (the entry with the house icon).
 1. In the pane that appears, select the arrow next to your name, and select **Import**.
 
@@ -49,11 +50,13 @@ In this lab, you will use an Azure Databricks workspace and perform Structured S
 
     > After you've completed the notebook, return to this screen, and continue to the next lab.
 
+1. In the left pane, select **Compute** and click on **Test cluster**. Click on **Terminate** to stop the cluster.
+
 ## Lab 2 - Working with Apache Spark in Synapse Analytics
 
-This lab demonstrates the experience of working with Apache Spark in Azure Synapse Analytics. You will learn how to connect an Azure Synapse Analytics workspace to an Azure Data Explorer workspace using a Linked Service and then load data from one of its databases using a Spark notebook. You will also learn how to use libraries like Hyperspace and MSSparkUtil to optimize the experience of working with Data Lake storage accounts from Spark notebooks. In addition to Data Explorer and Data Lake storage, the data enrichment process will also use historical data from a SQL Pool. In the end, you will learn how to publish the enriched data back into the Data Lake and consume it with the SQL Built-in Pool and Power BI.
+This lab demonstrates the experience of working with Apache Spark in Azure Synapse Analytics. You will also learn how to use libraries like Hyperspace and MSSparkUtil to optimize the experience of working with Data Lake storage accounts from Spark notebooks.
 
-After completing the lab, you will understand the main steps of an end-to-end data enrichment process that uses Spark in an Azure Synapse Analytics workspace.
+After completing the lab, you will understand how to load and make use of Spark libraries in an Azure Synapse Analytics workspace.
 #### Task 1: Index the Data Lake storage with Hyperspace
 
 When loading data from Azure Data Lake Gen 2, searching in the data is one of the most resource consuming operations. [Hyperspace](https://github.com/microsoft/hyperspace) introduces the ability for Apache Spark users to create indexes on their datasets, such as CSV, JSON, and Parquet, and use them for potential query and workload acceleration.

@@ -259,3 +259,4 @@ Time to complete: 9 minutes
 7. Select the default values for the cluster configuration.
 8. Check **Spot instances** to optimize costs.
 9. Select **Create Cluster**.
+10. Once the cluster has ben provisioned and is in a starting state, click on **Terminate** to stop the cluster.

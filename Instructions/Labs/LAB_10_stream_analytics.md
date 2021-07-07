@@ -11,7 +11,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 14 - Real-time stream processing with Stream Analytics](#module-14---real-time-stream-processing-with-stream-analytics)
+- [Module 10 - Real-time stream processing with Stream Analytics](#module-10---real-time-stream-processing-with-stream-analytics)
   - [Lab details](#lab-details)
   - [Technology overview](#technology-overview)
     - [Azure Stream Analytics](#azure-stream-analytics)
@@ -23,7 +23,7 @@ In this module, the student will be able to:
     - [Task 1: Configure Event Hubs](#task-1-configure-event-hubs)
     - [Task 2: Configure Synapse Analytics](#task-2-configure-synapse-analytics)
     - [Task 3: Configure Stream Analytics](#task-3-configure-stream-analytics)
-  - [Exercise 2: Generate and visualize data](#exercise-2-generate-and-visualize-data)
+  - [Exercise 2: Generate and aggregate data](#exercise-2-generate-and-aggregate-data)
     - [Task 1: Run data generator](#task-1-run-data-generator)
     - [Task 2: View aggregate data in Synapse Analytics](#task-2-view-aggregate-data-in-synapse-analytics)
   - [Exercise 3: Cleanup](#exercise-3-cleanup)

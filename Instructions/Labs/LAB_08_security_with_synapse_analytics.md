@@ -10,7 +10,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 13 - End-to-end security with Azure Synapse Analytics](#module-13---end-to-end-security-with-azure-synapse-analytics)
+- [Module 8 - End-to-end security with Azure Synapse Analytics](#module-8---end-to-end-security-with-azure-synapse-analytics)
   - [Lab details](#lab-details)
   - [Resource naming throughout this lab](#resource-naming-throughout-this-lab)
   - [Lab setup and pre-requisites](#lab-setup-and-pre-requisites)

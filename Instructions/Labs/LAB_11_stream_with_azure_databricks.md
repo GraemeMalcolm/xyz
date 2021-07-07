@@ -12,7 +12,7 @@ In this module, the student will be able to:
 
 ## Lab details
 
-- [Module 15 - Create a stream processing solution with Event Hubs and Azure Databricks](#module-15---create-a-stream-processing-solution-with-event-hubs-and-azure-databricks)
+- [Module 11 - Create a stream processing solution with Event Hubs and Azure Databricks](#module-11---create-a-stream-processing-solution-with-event-hubs-and-azure-databricks)
   - [Lab details](#lab-details)
   - [Concepts](#concepts)
   - [Event Hubs and Spark Structured Streaming](#event-hubs-and-spark-structured-streaming)

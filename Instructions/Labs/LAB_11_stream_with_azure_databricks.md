@@ -157,4 +157,4 @@ Within the notebook, you will:
 
 - Connect to Event Hubs and write a stream to your event hub
 - Read a stream from your event hub
-- Define a schema for the JSON payload and parse the data do display it within a table
+- Define a schema for the JSON payload and parse the data to display it within a table

@@ -262,11 +262,11 @@ Let's create a view to wrap a SQL query. Views allow you to reuse queries and ar
             FIRSTROW=2
         )
     WITH (
-        [UserName] VARCHAR (50),
-        [Gender] VARCHAR (10),
-        [Phone] VARCHAR (50),
-        [Email] VARCHAR (100),
-        [CreditCard] VARCHAR (50)
+    [UserName] NVARCHAR (50),
+    [Gender] NVARCHAR (10),
+    [Phone] NVARCHAR (50),
+    [Email] NVARCHAR (100),
+    [CreditCard] NVARCHAR (50)
     ) AS [r];
     GO
 

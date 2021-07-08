@@ -90,7 +90,7 @@ In this task, you will create and configure a new event hub within the provided 
 
 1. Navigate to the [Azure portal](https://portal.azure.com).
 
-2. Select **Resource groups** from the left-hand menu. Then select the resource group named **ms-dataengineering-14**.
+2. Select **Resource groups** from the left-hand menu. Then select the resource group named **data-engineering-synapse**.
 
 3. Select the **Event Hubs Namespace** (`eventhubYOUR_UNIQUE_ID`) from the list of resources in your resource group.
 
@@ -152,7 +152,7 @@ In this task, you will create a table in a Synapse dedicated SQL pool to store a
 
 1. Navigate to the [Azure portal](https://portal.azure.com).
 
-2. Select **Resource groups** from the left-hand menu. Then select the resource group named **ms-dataengineering-14**.
+2. Select **Resource groups** from the left-hand menu. Then select the resource group named **data-engineering-synapse**.
 
 3. Select the **Synapse workspace** (`asaworkspaceYOUR_UNIQUE_ID`) from the list of resources in your resource group.
 
@@ -374,7 +374,7 @@ In this task, you will view the anomaly data within Synapse Analytics.
 
 2. Navigate to the [Azure portal](https://portal.azure.com).
 
-3. Select **Resource groups** from the left-hand menu. Then select the resource group named **ms-dataengineering-14**.
+3. Select **Resource groups** from the left-hand menu. Then select the resource group named **data-engineering-synapse**.
 
 4. Select the **Synapse workspace** (`asaworkspaceYOUR_UNIQUE_ID`) from the list of resources in your resource group.
 

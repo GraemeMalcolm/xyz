@@ -115,7 +115,6 @@ Rather than creating a script with `OPENROWSET` and a path to the root 2019 fold
 
     ![The Built-in pool and demo database are selected.](images/built-in-and-demo.png "Script toolbar")
 
-4. Within the script, change the collation to `COLLATE Latin1_General_100_BIN2_UTF8` 
 
     The generated script contains the following components:
 
@@ -123,6 +122,7 @@ Rather than creating a script with `OPENROWSET` and a path to the root 2019 fold
     - **2)** Next, the external data source is created, pointing to the `wwi-02` container of the data lake storage account.
     - **3)** The CREATE EXTERNAL TABLE `WITH` statement specifies the file location and refers to the new external file format and data source created above.
     - **4)** Finally, we select the top 100 results from the `2019Sales` external table.
+    - **5)** You may recieve a message `Potential conversion error while reading VARCHAR column 'TransactionId' from UTF8 encoded text. Change database collation to a UTF8 collation or specify explicit column schema in WITH clause and assign UTF8 collation to VARCHAR columns.` If this is the case, after the [TransactionId] varchar(8000) line add **`COLLATE Latin1_General_100_BIN2_UTF8,`** to remove the error. The finished line will state **[TransactionId] varchar(8000) COLLATE Latin1_General_100_BIN2_UTF8,**
 
         ![The SQL script is displayed.](images/create-external-table-script.png "Create external table script")
 

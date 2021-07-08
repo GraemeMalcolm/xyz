@@ -261,14 +261,14 @@ Let's create a view to wrap a SQL query. Views allow you to reuse queries and ar
             PARSER_VERSION='2.0',
             FIRSTROW=2
         )
-    WITH (
-    [UserName] NVARCHAR (50),
-    [Gender] NVARCHAR (10),
-    [Phone] NVARCHAR (50),
-    [Email] NVARCHAR (100),
-    [CreditCard] NVARCHAR (50)
-    ) AS [r];
-    GO
+        WITH (
+        [UserName] NVARCHAR (50),
+        [Gender] NVARCHAR (10),
+        [Phone] NVARCHAR (50),
+        [Email] NVARCHAR (100),
+        [CreditCard] NVARCHAR (50)
+        ) AS [r];
+        GO
 
     SELECT * FROM CustomerInfo;
     GO

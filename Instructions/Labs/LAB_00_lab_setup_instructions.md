@@ -144,6 +144,8 @@ The below ARM template deploys several Azure resources for the labs, including A
 
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fctesta-oneillmsft%2Fxyz%2Fmain%2FAllfiles%2F00%2Fartifacts%2Fenvironment-setup%2fautomation%2F00-asa-workspace-core.json" target="_blank"><img src="https://aka.ms/deploytoazurebutton" /></a>
 
+    >![Note] If you are running a virtual machine provided for the course, copy the **`Deploy to Azure`** link and paste it into the browser within the VM.
+
 2. On the **Custom deployment** form fill in the fields described below.
 
    - **Subscription**: Select the **`Azure Pass - Sponsorship`** subscription for the deployment.
@@ -165,7 +167,7 @@ The below ARM template deploys several Azure resources for the labs, including A
 
     Perform the following step below from your Virtual Machine:
 
-1. Open a PowerShell Window as an administrator, run the following command to download the artifacts
+4. Open a PowerShell Window as an administrator, run the following command to download the artifacts
 
     ```powershell
     mkdir c:\dp203

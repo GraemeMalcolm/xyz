@@ -115,6 +115,8 @@ Rather than creating a script with `OPENROWSET` and a path to the root 2019 fold
 
     ![The Built-in pool and demo database are selected.](images/built-in-and-demo.png "Script toolbar")
 
+4. Within the script, change the collation to `COLLATE Latin1_General_100_BIN2_UTF8` 
+
     The generated script contains the following components:
 
     - **1)** The script begins with creating the `SynapseParquetFormat` external file format with a `FORMAT_TYPE` of `PARQUET`.

@@ -37,7 +37,7 @@ In this module, the student will be able to:
   - `asal400_ecommerce_userprofiles_source`
   - `asal400_customerprofile_cosmosdb`
 
-If you completed Module 8 or already have these artifacts, skip ahead to Exercise 2.
+If you completed Module 6 or already have these artifacts, skip ahead to Exercise 2.
 
 ### Task 1: Create linked service
 

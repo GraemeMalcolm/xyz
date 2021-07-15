@@ -28,7 +28,7 @@ Perform the following tasks to prepare your environment for the labs.
 
 3. In Windows PowerShell, run the following command set the execution policy so you can run a local PowerShell script file:
 
-    ```l
+    ```
     Set-ExecutionPolicy Unrestricted
     ```
 

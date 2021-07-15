@@ -43,8 +43,8 @@ Your data processing in Azure Databricks is accomplished by defining DataFrames 
 #### Task 1: Clone the Databricks archive
 
 1. If you do not currently have your Azure Databricks workspace open: in the Azure portal, navigate to your deployed Azure Databricks workspace and select **Launch Workspace**.
-1. In the left pane, select **Compute** and click on **Test cluster**. If the cluster has not started, click on **Start**. Please note you will have to wait 5 - 7 minutes for the cluster to start up before moving onto the next step.
-1. In the left pane, select **Workspace** > **Users**, and select your username (the entry with the house icon).
+1. In the left pane, select **Compute**. If you have an existing cluster, ensure that it is running (start it if necessary). If you don't have an existing cluster, create one that uses the latest runtime and **Scala 2.12** with **spot instances** enabled.
+1. When your cluster is running, in the left pane, select **Workspace** > **Users**, and select your username (the entry with the house icon).
 1. In the pane that appears, select the arrow next to your name, and select **Import**.
 
     ![The menu option to import the archive](images/import-archive.png)
@@ -60,64 +60,57 @@ Your data processing in Azure Databricks is accomplished by defining DataFrames 
 
 #### Task 2: Complete the Describe a DataFrame notebook
 
-Open the **1.Describe-a-dataframe** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
+1. Open the **1.Describe-a-dataframe** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within. Within the notebook, you will:
+    - Develop familiarity with the `DataFrame` APIs
+    - Learn the classes...
+      - `SparkSession`
+      - `DataFrame` (aka `Dataset[Row]`)
+    - Learn the action...
+      - `count()`
 
-Within the notebook, you will:
-
-- Develop familiarity with the `DataFrame` APIs
-- Learn the classes...
-  - `SparkSession`
-  - `DataFrame` (aka `Dataset[Row]`)
-- Learn the action...
-  - `count()`
-
-After you've completed the notebook, return to this screen, and continue to the next step.
+1. After you've completed the notebook, return to this screen, and continue to the next step.
 
 ### Exercise 2: Complete the Working with DataFrames notebook
 
-In your Azure Databricks workspace, open the **04-Working-With-Dataframes** folder that you imported within your user folder.
+1. In your Azure Databricks workspace, open the **04-Working-With-Dataframes** folder that you imported within your user folder.
 
-Open the **2.Use-common-dataframe-methods** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
+1. Open the **2.Use-common-dataframe-methods** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within. Within the notebook, you will:
 
-Within the notebook, you will:
+    - Develop familiarity with the `DataFrame` APIs
+    - Use common DataFrame methods for performance
+    - Explore the Spark API documentation
 
-- Develop familiarity with the `DataFrame` APIs
-- Use common DataFrame methods for performance
-- Explore the Spark API documentation
-
-After you've completed the notebook, return to this screen, and continue to the next step.
+1. After you've completed the notebook, return to this screen, and continue to the next step.
 
 ### Exercise 3: Complete the Display Function notebook
 
-In your Azure Databricks workspace, open the **04-Working-With-Dataframes** folder that you imported within your user folder.
+1. In your Azure Databricks workspace, open the **04-Working-With-Dataframes** folder that you imported within your user folder.
 
-Open the **3.Display-function** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
+1. Open the **3.Display-function** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within. Within the notebook, you will:
 
-Within the notebook, you will:
+    - Learn the transformations...
+      - `limit(..)`
+      - `select(..)`
+      - `drop(..)`
+      - `distinct()`
+      - `dropDuplicates(..)`
+    - Learn the actions...
+      - `show(..)`
+      - `display(..)`
 
-- Learn the transformations...
-  - `limit(..)`
-  - `select(..)`
-  - `drop(..)`
-  - `distinct()`
-  - `dropDuplicates(..)`
-- Learn the actions...
-  - `show(..)`
-  - `display(..)`
-
-After you've completed the notebook, return to this screen, and continue to the next step.
+1. After you've completed the notebook, return to this screen, and continue to the next step.
 
 ### Exercise 4: Complete the Distinct Articles exercise notebook
 
-In your Azure Databricks workspace, open the **04-Working-With-Dataframes** folder that you imported within your user folder.
+1. In your Azure Databricks workspace, open the **04-Working-With-Dataframes** folder that you imported within your user folder.
 
-Open the **4.Exercise: Distinct Articles** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
+2. Open the **4.Exercise: Distinct Articles** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
 
-In this exercise, you read Parquet files, apply necessary transformations, perform a total count of records, then verify that all the data was correctly loaded. As a bonus, try defining a schema that matches the data and update the read operation to use the schema.
+3. In this exercise, you read Parquet files, apply necessary transformations, perform a total count of records, then verify that all the data was correctly loaded. As a bonus, try defining a schema that matches the data and update the read operation to use the schema.
 
-> Note: You will find a corresponding notebook within the `Solutions` subfolder. This contains completed cells for the exercise. Refer to the notebook if you get stuck or simply want to see the solution.
+    > Note: You will find a corresponding notebook within the `Solutions` subfolder. This contains completed cells for the exercise. Refer to the notebook if you get stuck or simply want to see the solution.
 
-After you've completed the notebook, return to this screen, and continue to the next lab.
+4. After you've completed the notebook, return to this screen, and continue to the next lab.
 
 ## Lab 2 - Working with DataFrames advanced methods
 
@@ -144,31 +137,24 @@ This lab builds on the Azure Databricks DataFrames concepts learned in the previ
 
 #### Task 2: Complete the Date and Time Manipulation notebook
 
-Open the **1.DateTime-Manipulation** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
+1. Open the **1.DateTime-Manipulation** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within Within the notebook, you will explore more of the `...sql.functions` operations as well as date & time functions.
 
-Within the notebook, you will:
-
-- Explore more of the `...sql.functions` operations
-  - Date & time functions
-
-After you've completed the notebook, return to this screen, and continue to the next step.
+2. After you've completed the notebook, return to this screen, and continue to the next step.
 
 ### Exercise 2: Complete the Use Aggregate Functions notebook
 
-In your Azure Databricks workspace, open the **07-Dataframe-Advanced-Methods** folder that you imported within your user folder.
+1. In your Azure Databricks workspace, open the **07-Dataframe-Advanced-Methods** folder that you imported within your user folder.
 
-Open the **2.Use-Aggregate-Functions** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
+1. Open the **2.Use-Aggregate-Functions** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within. Within the notebook, you will learn various aggregate functions.
 
-Within the notebook, you will learn various aggregate functions.
-
-After you've completed the notebook, return to this screen, and continue to the next step.
+1. After you've completed the notebook, return to this screen, and continue to the next step.
 
 ### Exercise 3: Complete the De-Duping Data exercise notebook
 
-In your Azure Databricks workspace, open the **07-Dataframe-Advanced-Methods** folder that you imported within your user folder.
+1. In your Azure Databricks workspace, open the **07-Dataframe-Advanced-Methods** folder that you imported within your user folder.
 
-Open the **3.Exercise-Deduplication-of-Data** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
+1. Open the **3.Exercise-Deduplication-of-Data** notebook. Make sure you attach your cluster to the notebook before following the instructions and running the cells within.
 
-The goal of this exercise is to put into practice some of what you have learned about using DataFrames, including renaming columns. The instructions are provided within the notebook, along with empty cells for you to do your work. At the bottom of the notebook are additional cells that will help verify that your work is accurate.
+1. The goal of this exercise is to put into practice some of what you have learned about using DataFrames, including renaming columns. The instructions are provided within the notebook, along with empty cells for you to do your work. At the bottom of the notebook are additional cells that will help verify that your work is accurate.
 
-Once you have completed this, in the left pane, select **Compute** and click on **Test cluster**. Click on **Terminate** to stop the cluster.
+1. After you have completed this, in the left pane, select **Compute** and then select your cluster and click **Terminate** to stop it.

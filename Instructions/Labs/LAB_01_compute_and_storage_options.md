@@ -24,18 +24,39 @@ In this module, the student will be able to:
 ## Lab 1 - Delta Lake architecture
 
 In this lab, you will use an Azure Databricks workspace and perform Structured Streaming with batch jobs by using Delta Lake. You need to complete the exercises within a Databricks Notebook. To begin, you need to have access to an Azure Databricks workspace.
+
 ### Exercise 1: Complete the lab notebook
 
-#### Task 1: Clone the Databricks archive
+#### Task 1: Create an Azure Databricks cluster
 
-1. If you do not currently have your Azure Databricks workspace open: in the Azure portal, navigate to your deployed Azure Databricks workspace and select **Launch Workspace**.
-1. In the left pane, select **Compute** and click on **Test cluster**. If the cluster has not started, click on **Start**. Please note you will have to wait 5 - 7 minutes for the cluster to start up before moving onto the next step.
-1. In the left pane, select **Workspace** > **Users**, and select your username (the entry with the house icon).
+1. In the Azure portal, navigate to the Azure resource group created by the setup script for this course, then select the Azure Databricks workspace.
+
+    ![The Azure Databricks service is highlighted.](images/select-databricks-workspace.png "Select Azure Databricks service")
+
+2. Select **Launch Workspace** to open your Databricks workspace in a new tab.
+
+    ![The Azure Databricks Launch Workspace button is displayed.](images/databricks-launch-workspace.png "Launch Workspace")
+
+3. In the left-hand menu of your Databricks workspace, select **Compute**.
+4. Select **Create Cluster** to add a new cluster.
+
+    ![The create cluster page](images/create-a-cluster.png)
+
+5. Enter a name for your cluster, such as `Test Cluster`.
+6. Select the **Databricks RuntimeVersion**. We recommend the latest runtime and **Scala 2.12**.
+7. Select the default values for the cluster configuration.
+8. Check **Spot instances** to optimize costs.
+9. Select **Create Cluster**.
+10. Wait for the cluster to start. Please note you will have to wait 5 - 7 minutes for the cluster to start up before moving onto the next task.
+
+#### Task 2: Clone the Databricks archive
+
+1. In the Azure Databricks Workspace, in the left pane, select **Workspace** > **Users**, and select your username (the entry with the house icon).
 1. In the pane that appears, select the arrow next to your name, and select **Import**.
 
     ![The menu option to import the archive](images/import-archive.png)
 
-1. In the **Import Notebooks** dialog box, select the URL and paste in the following URL:
+1. In the **Import Notebooks** dialog box, select the URL and paste in the following URL: <!-- Update path when lab files move to MicrosoftLearning repo -->
 
     ```
     https://github.com/ctesta-oneillmsft/xyz/blob/main/Allfiles/microsoft-learning-paths-databricks-notebooks/data-engineering/DBC/11-Delta-Lake-Architecture.dbc?raw=true

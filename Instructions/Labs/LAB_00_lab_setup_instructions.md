@@ -18,7 +18,7 @@ Perform the following tasks to prepare your environment for the labs.
 
 2. In Windows PowerShell, run the following commands to download the required course files. This may take a few minutes. <!-- Change path when labs are moved to production repo -->
 
-    ```powershell
+    ```
     mkdir c:\dp-203
 
     cd c:\dp-203
@@ -28,21 +28,21 @@ Perform the following tasks to prepare your environment for the labs.
 
 3. In Windows PowerShell, run the following command set the execution policy so you can run a local PowerShell script file:
 
-    ```powershell
+    ```l
     Set-ExecutionPolicy Unrestricted
     ```
 
-    > [!Note]: If you receive a prompt that you are installing the module from an untrusted repository, select **Yes to All** to proceed with the setup.
+    > **Note**: If you receive a prompt that you are installing the module from an untrusted repository, select **Yes to All** to proceed with the setup.
 
 4. In Windows PowerShell, use the following command to change directories to the folder containing the automation scripts.
 
-    ```powershell
+    ```
     cd C:\dp-203\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
     ```
 
 5. In Windows PowerShell, run the following command to sign into Azure.
 
-    ```powershell
+    ```
     az login
     ```
 
@@ -50,7 +50,7 @@ Perform the following tasks to prepare your environment for the labs.
 
 6. In Windows PowerShell, enter the following command to run the setup script:
 
-    ```powershell
+    ```
     .\dp-203-setup.ps1
     ```
 

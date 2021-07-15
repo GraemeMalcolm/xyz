@@ -78,6 +78,7 @@ Write-Host "Your randomly-generated suffix for Azure resources is $suffix"
 
 # Select a random location that supports the required resource providers
 # (required to balance resource capacity across regions)
+$preferred_list = "australiaeast","centralus","eastus2","northeurope", "southcentralus", "southeastasia","uksouth","westeurope","westus","westus2"
 $locations = Get-AzLocation | Where-Object {
     $_.Providers -contains "Microsoft.Synapse" -and
     $_.Providers -contains "Microsoft.Databricks" -and
@@ -87,12 +88,29 @@ $locations = Get-AzLocation | Where-Object {
     $_.Providers -contains "Microsoft.EventHub" -and
     $_.Providers -contains "Microsoft.KeyVault" -and
     $_.Providers -contains "Microsoft.Storage" -and
-    $_.Providers -contains "Microsoft.Compute"
+    $_.Providers -contains "Microsoft.Compute" -and
+    $_.Location -in $preferred_list
 }
 $max_index = $locations.Count - 1
-$rand = (0..$max_index) | Get-Random
-$random_location = $locations.Get($rand).Location
-Write-Host "Randomly selected location: $random_location"
+Write-host "Select a deployment region (or use a randomly selected one)"
+for($i = 0; $i -le $max_index; $i++)
+{
+        Write-Host "[$i]: $($locations.Get($i).DisplayName)"
+}
+Write-Host "[Any other value]: Use a randomly selected region"
+$choice = Read-Host "Enter your choice"
+
+If ($choice -ne "" -And $choice -in (0..$max_index))
+{
+        $random_location = $locations.Get($choice).Location
+}
+Else
+{
+        $rand = (0..$max_index) | Get-Random
+        $random_location = $locations.Get($rand).Location
+}
+
+Write-Host "Selected location: $random_location"
 
 # Create a resource group
 $resourceGroupName = "data-engineering-synapse-$suffix"

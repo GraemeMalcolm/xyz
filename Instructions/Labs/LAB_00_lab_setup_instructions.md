@@ -34,7 +34,7 @@ Perform the following tasks to prepare your environment for the labs.
 
     > [!Note]: If you receive a prompt that you are installing the module from an untrusted repository, select **Yes to All** to proceed with the setup.
 
-4. In Windows PowerShell, use the following command to change directories to the folder containing the automation scripts. <!-- Change path when labs are moved to production repo -->
+4. In Windows PowerShell, use the following command to change directories to the folder containing the automation scripts.
 
     ```powershell
     cd C:\labfiles\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
@@ -62,4 +62,4 @@ Perform the following tasks to prepare your environment for the labs.
 
 While the script runs, your instructor will present the first module of the course. Your environment should be ready for you when it's time to start the first lab.
 
-> **NOTE** The script will take about 30-45 minutes to complete. The script will create the Azure resources with randomly generated names. In some very rare cases, a resource name may already be in use or there may be capacity constraints for specific resources in the randomly-selected region, causing an error. If this happens, delete the **data-engineering-synapse-*xxxxxx*** resource group created by the script and re-run the script.
+> **NOTE** The script will take about 30-45 minutes to complete. The script will create the Azure resources with randomly generated names. In some very rare cases, a resource name may already be in use or there may be capacity constraints for specific resources in the selected region, causing an error. If this happens, delete the **data-engineering-synapse-*xxxxxx*** resource group created by the script and re-run the script.

@@ -19,9 +19,9 @@ Perform the following tasks to prepare your environment for the labs.
 2. In Windows PowerShell, run the following commands to download the required course files. This may take a few minutes. <!-- Change path when labs are moved to production repo -->
 
     ```powershell
-    mkdir c:\labfiles
+    mkdir c:\dp-203
 
-    cd c:\labfiles
+    cd c:\dp-203
 
     git clone https://github.com/ctesta-oneillmsft/xyz.git data-engineering-ilt-deployment
     ```
@@ -37,7 +37,7 @@ Perform the following tasks to prepare your environment for the labs.
 4. In Windows PowerShell, use the following command to change directories to the folder containing the automation scripts.
 
     ```powershell
-    cd C:\labfiles\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
+    cd C:\dp-203\data-engineering-ilt-deployment\Allfiles\00\artifacts\environment-setup\automation\
     ```
 
 5. In Windows PowerShell, run the following command to sign into Azure.

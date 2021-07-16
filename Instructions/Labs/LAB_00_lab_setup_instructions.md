@@ -60,10 +60,6 @@ Perform the following tasks to prepare your environment for the labs.
 
 9. When prompted, enter a suitably complex password for the SQL Database (make a note of this password in case you need it later).
 
-10. When prompted to choose a region, unless instructed by your trainer, choose a randomly selected region.
-
 While the script runs, your instructor will present the first module of the course. Your environment should be ready for you when it's time to start the first lab.
 
-> **Note**: The script will take about 30-45 minutes to complete. The script will create the Azure resources with randomly generated names. In some rare cases, an identical resource name may already be in use or there may be capacity constraints for specific resources in the selected region, causing an error. If this happens, use the Azure portal to delete the **data-engineering-synapse-*xxxxxx*** resource group created by the script and re-run the script.
->
-> To determine whether capacity constraints have been applied for a given region, you can use the Azure portal to try to create a **SQL Database** resource with a new server, and when configuring the new server, select the region you want to use - if capacity constraints are in effect, an error message will be displayed. Use this approach to find an available region, and then cancel the creation of the SQL Database resource. Then re-run the script and select the region you identified.
+> **Note**: The script will take about 30-45 minutes to complete. The script will create the Azure resources with randomly generated names. In some rare cases, an identical resource name may already be in use or there may be capacity constraints for specific resources in the randomly selected region, causing an error. If this happens, use the Azure portal to delete the **data-engineering-synapse-*xxxxxx*** resource group created by the script and re-run the script.

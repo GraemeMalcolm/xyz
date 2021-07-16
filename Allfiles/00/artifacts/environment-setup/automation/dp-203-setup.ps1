@@ -75,9 +75,12 @@ Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
 # Generate a random suffix for unique Azure resource names
 [string]$suffix =  -join ((48..57) + (97..122) | Get-Random -Count 7 | % {[char]$_})
 Write-Host "Your randomly-generated suffix for Azure resources is $suffix"
+$resourceGroupName = "data-engineering-synapse-$suffix"
 
 # Select a random location that supports the required resource providers
 # (required to balance resource capacity across regions)
+Write-Host "Selecting a region for deployment..."
+
 $preferred_list = "australiaeast","centralus","eastus2","northeurope", "southcentralus", "southeastasia","uksouth","westeurope","westus","westus2"
 $locations = Get-AzLocation | Where-Object {
     $_.Providers -contains "Microsoft.Synapse" -and
@@ -92,30 +95,33 @@ $locations = Get-AzLocation | Where-Object {
     $_.Location -in $preferred_list
 }
 $max_index = $locations.Count - 1
-Write-host "Select a deployment region (or use a randomly selected one)"
-for($i = 0; $i -le $max_index; $i++)
-{
-        Write-Host "[$i]: $($locations.Get($i).DisplayName)"
-}
-Write-Host "[Any other value]: Use a randomly selected region"
-$choice = Read-Host "Enter your choice"
+$rand = (0..$max_index) | Get-Random
+$random_location = $locations.Get($rand).Location
 
-If ($choice -ne "" -And $choice -in (0..$max_index))
-{
-        $random_location = $locations.Get($choice).Location
+# Try to create a SQL Databasde resource to test for capacity constraints
+$success = 0
+$tried_list = New-Object Collections.Generic.List[string]
+$testPassword = ConvertTo-SecureString $sqlPassword -AsPlainText -Force
+$testCred = New-Object System.Management.Automation.PSCredential ("SQLUser", $testPassword)
+$testServer = "testsql$suffix"
+while ($success -ne 1){
+    try {
+        $success = 1
+        New-AzResourceGroup -Name $resourceGroupName -Location $random_location | Out-Null
+        New-AzSqlServer -ResourceGroupName $resourceGroupName -Location $random_location -ServerName $testServer -ServerVersion "12.0" -SqlAdministratorCredentials $testCred -ErrorAction Stop | Out-Null
+    }
+    catch {
+      Remove-AzResourceGroup -Name $resourceGroupName -Force
+      $success = 0
+      $tried_list.Add($random_location)
+      $locations = $locations | Where-Object {$_.Location -notin $tried_list}
+      $rand = (0..$($locations.Count - 1)) | Get-Random
+      $random_location = $locations.Get($rand).Location
+    }
 }
-Else
-{
-        $rand = (0..$max_index) | Get-Random
-        $random_location = $locations.Get($rand).Location
-}
+Remove-AzSqlServer -ResourceGroupName $resourceGroupName -ServerName $testServer | Out-Null
 
-Write-Host "Selected location: $random_location"
-
-# Create a resource group
-$resourceGroupName = "data-engineering-synapse-$suffix"
-Write-Host "Creating $resourceGroupName resource group..."
-New-AzResourceGroup -Name $resourceGroupName -Location $random_location
+Write-Host "Selected region: $random_location"
 
 # Use ARM template to deploy resources
 Write-Host "Creating Azure resources. This may take some time..."
